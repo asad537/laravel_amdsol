@@ -13,3 +13,36 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+
+# Composer
+composer.phar
+composer.lock
+
+# Laravel logs
+/storage/logs/*.log
+
+# Cache and session files
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Package manager lock files (optional)
+package-lock.json
+yarn.lock
+
+# Build files
+/public/mix-manifest.json
+/public/css/app.css
+/public/js/app.js
