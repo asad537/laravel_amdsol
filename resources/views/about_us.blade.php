@@ -61,7 +61,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.75);
             z-index: 1;
         }
 
@@ -72,8 +72,21 @@
 
         .about-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-hero-description {
+            font-size: 1.5rem;
+            color: #ffffff;
+            max-width: 900px;
+            line-height: 1.7;
+            margin: 0 auto;
+            opacity: 1;
+            font-weight: 400;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.8);
         }
 
         .why-section {
@@ -85,9 +98,9 @@
 
         .top-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 30px;
+            align-items: start;
             margin-bottom: 60px;
             position: relative;
             width: 100%;
@@ -99,10 +112,11 @@
         .doctor-container {
             position: relative;
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
+            margin-right: auto;
         }
 
-        .doctor-ellipse {
+        /* .doctor-ellipse {
             position: absolute;
             width: 271px;
             height: 271px;
@@ -114,12 +128,12 @@
             transform: translate(-50%, -50%);
             opacity: 1;
             z-index: 0;
-        }
+        } */
 
         .doctor-image {
             width: 100%;
             max-width: 400px;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+            /* filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2)); */
             position: relative;
             z-index: 1;
         }
@@ -270,7 +284,7 @@
 
         @media (max-width: 768px) {
             .about-section {
-                height: 300px;
+                height: 320px;
                 padding: 40px 15px;
                 width: 100vw;
                 max-width: 100%;
@@ -278,6 +292,15 @@
 
             .about-section h2 {
                 font-size: 2rem;
+                margin-bottom: 12px;
+            }
+
+            .about-hero-description {
+                font-size: 1.05rem;
+                max-width: 95%;
+                line-height: 1.6;
+                font-weight: 400;
+                text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.8);
             }
 
             .why-section {
@@ -351,15 +374,28 @@
             }
 
             .circle {
-                width: 100%;
-                max-width: 320px;
+                width: 320px;
                 height: 320px;
-                padding: 55px 40px;
+                min-height: 320px;
+                max-width: 320px;
+                padding: 40px 30px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 margin: 0 auto;
+                border-width: 14px;
+                box-sizing: border-box;
+            }
+
+            .circle.mission {
+                border-top-width: 14px;
+                border-left-width: 14px;
+            }
+
+            .circle.vision {
+                border-bottom-width: 14px;
+                border-right-width: 14px;
             }
 
             .circle-icon {
@@ -480,15 +516,28 @@
             }
 
             .circle {
-                width: 100%;
-                max-width: 290px;
-                height: 290px;
-                padding: 45px 30px;
+                width: 280px;
+                height: 280px;
+                min-height: 280px;
+                max-width: 280px;
+                padding: 35px 25px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 margin: 0 auto;
+                border-width: 12px;
+                box-sizing: border-box;
+            }
+
+            .circle.mission {
+                border-top-width: 12px;
+                border-left-width: 12px;
+            }
+
+            .circle.vision {
+                border-bottom-width: 12px;
+                border-right-width: 12px;
             }
 
             .circle-icon {
@@ -614,6 +663,24 @@
         .tech-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Active card class for mobile scroll effect */
+        .tech-card.active-card::before {
+            top: 0;
+        }
+
+        .tech-card.active-card {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-card.active-card h3 {
+            color: #fff;
+        }
+
+        .tech-card.active-card p {
+            color: #fff;
         }
 
         .tech-card-icon,
@@ -1540,6 +1607,7 @@
 <body>
     <section class="about-section">
         <h2>About US</h2>
+        <p class="about-hero-description">Transforming healthcare revenue management through innovative solutions, expert teams, and unwavering commitment to your practice's financial success.</p>
     </section>
 
     <section class="why-section">
@@ -1790,6 +1858,39 @@
                 </div>
             </div>
         </section>
+
+<script>
+// Auto-hover effect for technical mastery cards on mobile scroll
+document.addEventListener('DOMContentLoaded', function() {
+    // Only apply on mobile/tablet devices
+    if (window.innerWidth <= 768) {
+        const techCards = document.querySelectorAll('.tech-card');
+        
+        if (techCards.length > 0) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '-40% 0px -40% 0px', // Trigger when card is in center 20% of viewport
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Remove active class from all cards
+                        techCards.forEach(card => card.classList.remove('active-card'));
+                        // Add active class to the card in view
+                        entry.target.classList.add('active-card');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all tech cards
+            techCards.forEach(card => observer.observe(card));
+        }
+    }
+});
+</script>
+
 </body>
 
 </html>

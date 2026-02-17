@@ -401,6 +401,17 @@ class HomeController extends Controller
         return view('demo', $data);
     }
 
+    public function testimonials()
+    {
+        $data["testimonials"] = Testimonial::where('display', 1)->orderBy('id', 'DESC')->get();
+        $data["meta_title"] = "Client Testimonials | AMD SOL";
+        $data["meta_keywords"] = "Testimonials, Client Reviews, Medical Billing Reviews";
+        $data["meta_descr"] = "Read what our clients say about AMD SOL's medical billing and healthcare management services.";
+        $data["site"] = $this->site_settings;
+
+        return view('testimonials', $data);
+    }
+
     protected function submit_demo_form($form)
     {
         $firstName = $form['firstName'] ?? '';

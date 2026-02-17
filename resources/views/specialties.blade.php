@@ -326,7 +326,7 @@
 
     .see-more-btn {
         background-color: #002147;
-        color: white;
+        color: #fff;
         border: none;
         padding: 11px 35px;
         font-size: 14px;
@@ -336,13 +336,24 @@
         font-family: 'Poppins', sans-serif;
         display: inline-block;
         text-decoration: none;
-        transition: all 0.3s ease;
+        /* transition: all 0.3s ease; */
     }
 
     .see-more-btn:hover {
         background-color: #ffffff;
-        border: 1px solid black;
-        color: black;
+        border: 1px solid #000000;
+        color: #000000;
+    }
+
+    .see-more-btn:focus {
+        outline: none;
+        color: #fff;
+        background-color: #002147;
+    }
+
+    .see-more-btn:active {
+        color: #fff;
+        background-color: #002147;
     }
 
     @media (max-width: 480px) {
@@ -548,11 +559,14 @@
         cursor: pointer;
         font-family: 'Poppins', sans-serif;
         transition: all 0.3s ease;
+        display: inline-block;
+        text-decoration: none;
     }
 
     .pricing-btn:hover {
         background-color: #ffff;
         color: #000000;
+        text-decoration: none;
     }
 
     /* Boost Revenue Section */
@@ -623,12 +637,15 @@
         cursor: pointer;
         font-family: 'Poppins', sans-serif;
         transition: all 0.3s ease;
+        display: inline-block;
+        text-decoration: none;
     }
 
     .boost-pricing-btn:hover {
         background-color: #ffffff;
         color: #000000;
         border: 1px solid #000000;
+        text-decoration: none;
     }
 
     @media (max-width: 968px) {
@@ -952,6 +969,13 @@
         border-radius: 30px;
         cursor: pointer;
         margin-top: 20px;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .cta-request-btn:hover {
+        text-decoration: none;
+        color: #002147;
     }
 
     @media (max-width: 768px) {
@@ -1086,7 +1110,7 @@
             <div class="about-text-custom">
                 <h2>Affordable Billing Solutions for Healthcare</h2>
                 <p>AMD Solutions provides specialized medical billing services designed to optimize the revenue cycle of healthcare practices. Our team of highly trained and experienced coders and billing specialists works to minimize claim denials, prevent revenue leakage, and maximize reimbursements. We manage end-to-end billing operations for multiple specialties, ensuring clean claim submission, proactive denial management, timely follow-ups, and reduced days in A/R. By combining clinical data, payer insights, and automated precision, we deliver actionable financial intelligence so practices can focus entirely on patient care while we safeguard and grow their revenue.</p>
-                <button class="pricing-btn">Request Pricing</button>
+                <a href="{{ url('request-demo') }}" class="pricing-btn">Request Pricing</a>
             </div>
             <div class="about-images-custom">
                 <img src="{{ asset('assets/images/specialties/pic1.jpg') }}" alt="Medical Professional" class="about-img-1">
@@ -1101,7 +1125,7 @@
             <div class="cta-content">
                 <p class="cta-label">Get Free Quote</p>
                 <h2>View AMDSOL Pricing</h2>
-                <button class="cta-request-btn">Request Now</button>
+                <a href="{{ url('request-demo') }}" class="cta-request-btn">Request Now</a>
             </div>
         </div>
     </section>
@@ -1116,7 +1140,7 @@
             <div class="boost-content-custom">
                 <div class="boost-text">
                     <p class="boost-description-custom">Our expert medical billing services help healthcare practices maximize revenue while reducing managerial stress. We handle the full spectrum of billing operations, including precise coding, clean claim submissions, and proactive denial management, ensuring faster reimbursements and minimal revenue leakage. By managing these complexities for multiple specialties, we free your in-house team to focus entirely on patient care. With data-driven insights, payer-specific strategies, and automated workflows, we transform the revenue cycle into a seamless, efficient process protecting your bottom line while keeping you fully compliant with ever-changing healthcare regulations.</p>
-                    <button class="boost-pricing-btn">Request Pricing</button>
+                    <a href="{{ url('request-demo') }}" class="boost-pricing-btn">Request Pricing</a>
                 </div>
                 <div class="boost-image">
                     <img src="{{ asset('assets/images/specialties/boost revenew.jpg') }}" alt="Boost Revenue" class="boost-img">
@@ -1175,11 +1199,11 @@
             <h2>Couldn't Find Your Specialty Here?</h2>
             <p>Please Leave Your Email Below, And Our Medical Billing Manager <br> Will Contact You Shortly.</p>
             
-            <form class="form-container-custom">
-                <input type="text" placeholder="Your Specialty" required>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Phone" required>
+            <form class="form-container-custom" id="specialtyForm">
+                <input type="text" id="specialtyField" placeholder="Your Specialty" required>
+                <input type="text" id="specialtyName" placeholder="Name" required pattern="[A-Za-z\s]+" title="Please enter letters only">
+                <input type="email" id="specialtyEmail" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
+                <input type="tel" id="specialtyPhone" placeholder="Phone" required pattern="[0-9]+" title="Please enter numbers only">
                 <button type="submit" class="submit-btn-custom">Submit</button>
             </form>
         </div>
@@ -1200,11 +1224,60 @@
                 toggleCheckbox.checked = !toggleCheckbox.checked;
                 this.setAttribute('aria-expanded', toggleCheckbox.checked);
                 
+                // Remove focus from button after click
+                this.blur();
+                
                 if (!toggleCheckbox.checked) {
                     setTimeout(() => {
                         billingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 100);
                 }
+            });
+        }
+
+        // Form validation for specialty form
+        const specialtyNameField = document.getElementById('specialtyName');
+        const specialtyPhoneField = document.getElementById('specialtyPhone');
+
+        // Name field - only letters and spaces
+        if (specialtyNameField) {
+            specialtyNameField.addEventListener('keydown', function(e) {
+                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End', ' '];
+                if (!allowedKeys.includes(e.key) && !/[A-Za-z\s]/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            specialtyNameField.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^A-Za-z\s]/g, '');
+            });
+
+            specialtyNameField.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const lettersOnly = pastedText.replace(/[^A-Za-z\s]/g, '');
+                this.value = lettersOnly;
+            });
+        }
+
+        // Phone field - only numbers
+        if (specialtyPhoneField) {
+            specialtyPhoneField.addEventListener('keydown', function(e) {
+                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'];
+                if (!allowedKeys.includes(e.key) && !/[0-9]/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            specialtyPhoneField.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+            specialtyPhoneField.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const numericOnly = pastedText.replace(/[^0-9]/g, '');
+                this.value = numericOnly;
             });
         }
     });

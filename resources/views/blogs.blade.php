@@ -6,7 +6,7 @@
         max-width: 100%;
         min-height: 448px;
         background-color: #002147;
-        background-image: url('{{ asset("assets/images/blog/blog_page.jpeg") }}');
+        background-image: url('{{ asset("assets/images/blog/blog_page .jpeg") }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

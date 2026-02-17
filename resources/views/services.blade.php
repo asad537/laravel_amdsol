@@ -669,21 +669,21 @@
     <!-- Right Side - Form -->
     <div class="hero-form">
       <h4>Book a Consultation</h4>
-      <form action="#" method="POST">
+      <form action="#" method="POST" id="servicesConsultForm">
         @csrf
         <div class="form-group">
           <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" required pattern="[A-Za-z\s]+" title="Please enter letters only">
         </div>
         
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
         </div>
         
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required>
+          <input type="tel" id="phone" name="phone" required pattern="[0-9]+" title="Please enter numbers only">
         </div>
         
         <button type="submit" class="book-now-btn">Book Now</button>
@@ -691,6 +691,54 @@
     </div>
   </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Name field - only letters and spaces
+        const nameField = document.getElementById('name');
+        if (nameField) {
+            nameField.addEventListener('keydown', function(e) {
+                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End', ' '];
+                if (!allowedKeys.includes(e.key) && !/[A-Za-z\s]/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            nameField.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^A-Za-z\s]/g, '');
+            });
+
+            nameField.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const lettersOnly = pastedText.replace(/[^A-Za-z\s]/g, '');
+                this.value = lettersOnly;
+            });
+        }
+
+        // Phone field - only numbers
+        const phoneField = document.getElementById('phone');
+        if (phoneField) {
+            phoneField.addEventListener('keydown', function(e) {
+                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'];
+                if (!allowedKeys.includes(e.key) && !/[0-9]/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            phoneField.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+            phoneField.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const numericOnly = pastedText.replace(/[^0-9]/g, '');
+                this.value = numericOnly;
+            });
+        }
+    });
+</script>
 
 <!-- About Section -->
 <section class="about-section">

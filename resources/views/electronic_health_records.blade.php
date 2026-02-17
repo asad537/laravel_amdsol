@@ -22,7 +22,7 @@
     }
 
     .ehr-wrapper h1, .ehr-wrapper h2, .ehr-wrapper h3 {
-        color: #002147;
+        color: #fff;
     }
 
     .hero-section {

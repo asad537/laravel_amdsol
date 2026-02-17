@@ -257,18 +257,100 @@
     }
 
     @media (max-width: 1024px) {
+        .pediatric-benefits-section {
+            padding: 50px 40px;
+        }
+
         .pediatric-benefits-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .pediatric-main-heading-sec {
+            font-size: 2rem;
+        }
+
+        .pediatric-subtitle-text {
+            font-size: 1.3rem;
+        }
+
+        .pediatric-benefit-title {
+            font-size: 1.7rem;
+        }
+
+        .pediatric-benefit-description {
+            font-size: 1.3rem;
         }
     }
 
     @media (max-width: 768px) {
+        .pediatric-benefits-section {
+            padding: 40px 20px;
+        }
+
+        .pediatric-header-wrapper {
+            margin-bottom: 35px;
+        }
+
+        .pediatric-main-heading-sec {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+        }
+
+        .pediatric-subtitle-text {
+            font-size: 1.1rem;
+        }
+
         .pediatric-benefits-grid {
             grid-template-columns: 1fr;
+            gap: 20px;
         }
+
         .pediatric-benefit-card {
             width: 100%;
             max-width: 100%;
+            padding: 28px 20px;
+        }
+
+        .pediatric-icon-wrapper {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+        }
+
+        .pediatric-benefit-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .pediatric-benefit-description {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .pediatric-benefits-section {
+            padding: 35px 15px;
+        }
+
+        .pediatric-main-heading-sec {
+            font-size: 1.5rem;
+        }
+
+        .pediatric-subtitle-text {
+            font-size: 1rem;
+        }
+
+        .pediatric-benefit-card {
+            padding: 24px 18px;
+        }
+
+        .pediatric-benefit-title {
+            font-size: 1.3rem;
+        }
+
+        .pediatric-benefit-description {
+            font-size: 1.1rem;
         }
     }
 

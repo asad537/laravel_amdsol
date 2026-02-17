@@ -182,7 +182,7 @@
 
     .benefits-list-demo li {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         font-size: 1.3rem;
         margin-bottom: 22px;
         color: #2c3e50;
@@ -203,7 +203,6 @@
         font-weight: bold;
         font-size: 1.1em;
         flex-shrink: 0;
-        margin-top: 2px;
     }
 
     .form-container-demo {
@@ -361,26 +360,26 @@
                 </div>
 
                 <div class="form-container-demo">
-                    <form method="post" action="{{ url('request-demo') }}">
+                    <form method="post" action="{{ url('request-demo') }}" id="demoForm">
                         @csrf
                         <div class="form-group-demo">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                            <input type="text" id="firstName" name="firstName" required pattern="[A-Za-z\s]+" title="Please enter letters only">
                         </div>
 
                         <div class="form-group-demo">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" required>
+                            <input type="text" id="lastName" name="lastName" required pattern="[A-Za-z\s]+" title="Please enter letters only">
                         </div>
 
                         <div class="form-group-demo">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
                         </div>
 
                         <div class="form-group-demo">
                             <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <input type="tel" id="phone" name="phone" required pattern="[0-9]+" title="Please enter numbers only">
                         </div>
 
                         <div class="form-group-demo">
@@ -390,7 +389,7 @@
 
                         <div class="form-group-demo">
                             <label for="physicians">Number Of Physicians</label>
-                            <input type="number" id="physicians" name="physicians" required>
+                            <input type="number" id="physicians" name="physicians" required min="1">
                         </div>
 
                         <div class="form-group-demo">
@@ -405,4 +404,74 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // First Name - only letters and spaces
+        const firstNameField = document.getElementById('firstName');
+        if (firstNameField) {
+            firstNameField.addEventListener('keydown', function(e) {
+                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End', ' '];
+                if (!allowedKeys.includes(e.key) && !/[A-Za-z\s]/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            firstNameField.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^A-Za-z\s]/g, '');
+            });
+
+            firstNameField.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const lettersOnly = pastedText.replace(/[^A-Za-z\s]/g, '');
+                this.value = lettersOnly;
+            });
+        }
+
+        // Last Name - only letters and spaces
+        const lastNameField = document.getElementById('lastName');
+        if (lastNameField) {
+            lastNameField.addEventListener('keydown', function(e) {
+                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End', ' '];
+                if (!allowedKeys.includes(e.key) && !/[A-Za-z\s]/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            lastNameField.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^A-Za-z\s]/g, '');
+            });
+
+            lastNameField.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const lettersOnly = pastedText.replace(/[^A-Za-z\s]/g, '');
+                this.value = lettersOnly;
+            });
+        }
+
+        // Phone - only numbers
+        const phoneField = document.getElementById('phone');
+        if (phoneField) {
+            phoneField.addEventListener('keydown', function(e) {
+                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'];
+                if (!allowedKeys.includes(e.key) && !/[0-9]/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            phoneField.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+            phoneField.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const numericOnly = pastedText.replace(/[^0-9]/g, '');
+                this.value = numericOnly;
+            });
+        }
+    });
+</script>
 @endsection

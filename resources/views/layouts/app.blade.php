@@ -8,28 +8,13 @@
     <meta name="google-site-verification" content="b4ou-sLla8wDu3s7-gAB9K_J5Hhlta_vKlWr5mFLZqo" />
     <meta name="ROBOTS" CONTENT="INDEX,FOLLOW">
     <script>
-        // Save scroll position and current page before unload
-        window.addEventListener('beforeunload', function() {
-            sessionStorage.setItem('scrollPosition', window.scrollY);
-            sessionStorage.setItem('lastPage', window.location.pathname);
-        });
+        // Ensure pages always load from top
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
         
-        // Restore scroll position only if returning to same page
-        window.addEventListener('DOMContentLoaded', function() {
-            const scrollPosition = sessionStorage.getItem('scrollPosition');
-            const lastPage = sessionStorage.getItem('lastPage');
-            const currentPage = window.location.pathname;
-            
-            // Only restore if it's the same page (e.g., after form submission)
-            if (scrollPosition && lastPage === currentPage) {
-                setTimeout(function() {
-                    window.scrollTo(0, parseInt(scrollPosition));
-                }, 100);
-            }
-            
-            // Clear stored position after use
-            sessionStorage.removeItem('scrollPosition');
-            sessionStorage.removeItem('lastPage');
+        window.addEventListener('beforeunload', function() {
+            window.scrollTo(0, 0);
         });
     </script>
     
@@ -200,7 +185,10 @@
             </li>
             <li><a href="{{ url('case-studies') }}">Case Studies</a></li>
             <li class="mobile-dropdown">
-                <a href="{{ url('specialties') }}" class="mobile-dropdown-toggle">Specialties <i class="fa fa-angle-down"></i></a>
+                <div class="mobile-dropdown-header">
+                    <a href="{{ url('specialties') }}" class="mobile-dropdown-link">Specialties</a>
+                    <span class="mobile-dropdown-toggle"><i class="fa fa-angle-down"></i></span>
+                </div>
                 <ul class="mobile-dropdown-menu">
                     <li><a href="{{ url('cardiology-billing-services') }}">Cardiology</a></li>
                     <li><a href="{{ url('radiology-billing-services') }}">Radiology</a></li>
@@ -255,7 +243,8 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileDropdownToggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
-            const parent = this.parentElement;
+            e.stopPropagation();
+            const parent = this.closest('.mobile-dropdown');
             const isActive = parent.classList.contains('active');
             
             // Close all dropdowns

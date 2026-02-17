@@ -24,7 +24,7 @@
         width: 100%;
         min-height: 448px;
         background-color: #002147;
-        background-image: url('{{ asset('assets/images/contact/contact-img/contactus.png') }}');
+        background-image: url('{{ asset('assets/images/contact/contact-img/contactus.jpg') }}');
         background-size: cover;
         background-position: right center;
         background-repeat: no-repeat;
@@ -61,7 +61,7 @@
     .contact-hero-section h1 {
         text-align: left;
         font-weight: 700;
-        font-size: 44px;
+        font-size: 44px;                                                                                                             
         color: white !important;
         line-height: 1.2;
         margin-bottom: 3px;
@@ -531,22 +531,22 @@
                     <div class="contact-form-row">
                         <div class="contact-form-group">
                             <label class="contact-form-label">First Name</label>
-                            <input type="text" class="contact-form-input" name="first_name" required>
+                            <input type="text" class="contact-form-input" name="first_name" required pattern="[A-Za-z\s]+" title="Please enter only letters" placeholder="Enter first name">
                         </div>
                         <div class="contact-form-group">
                             <label class="contact-form-label">Last Name</label>
-                            <input type="text" class="contact-form-input" name="last_name" required>
+                            <input type="text" class="contact-form-input" name="last_name" required pattern="[A-Za-z\s]+" title="Please enter only letters" placeholder="Enter last name">
                         </div>
                     </div>
 
                     <div class="contact-form-group" style="margin-bottom: 24px;">
                         <label class="contact-form-label">Email</label>
-                        <input type="email" class="contact-form-input" name="email" required>
+                        <input type="email" class="contact-form-input" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" placeholder="Enter email address">
                     </div>
 
                     <div class="contact-form-group" style="margin-bottom: 24px;">
                         <label class="contact-form-label">Phone</label>
-                        <input type="tel" class="contact-form-input" name="phone" required>
+                        <input type="tel" class="contact-form-input" name="phone" required pattern="[0-9+\-\s()]+" title="Please enter only numbers" placeholder="Enter phone number" maxlength="15">
                     </div>
 
                     <div class="contact-form-group" style="margin-bottom: 24px;">
@@ -570,4 +570,46 @@
         </div>
     </section>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Name fields - only allow letters and spaces
+    const nameInputs = document.querySelectorAll('input[name="first_name"], input[name="last_name"]');
+    nameInputs.forEach(input => {
+        input.addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^A-Za-z\s]/g, '');
+        });
+    });
+
+    // Phone field - only allow numbers, +, -, spaces, and parentheses
+    const phoneInput = document.querySelector('input[name="phone"]');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9+\-\s()]/g, '');
+        });
+        
+        phoneInput.addEventListener('keypress', function(e) {
+            const char = String.fromCharCode(e.which);
+            if (!/[0-9+\-\s()]/.test(char)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
+
+    // Email validation on blur
+    const emailInput = document.querySelector('input[name="email"]');
+    if (emailInput) {
+        emailInput.addEventListener('blur', function() {
+            const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+            if (this.value && !emailPattern.test(this.value)) {
+                this.setCustomValidity('Please enter a valid email address');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+    }
+});
+</script>
+
 @endsection

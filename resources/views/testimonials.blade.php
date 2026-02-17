@@ -1,0 +1,274 @@
+@extends('layouts.app')
+
+@section('content')
+<style>
+    .testimonials-page-wrapper {
+        font-family: 'Poppins', sans-serif;
+        background: #f8f9fa;
+    }
+
+    .testimonials-hero {
+        width: 100%;
+        min-height: 350px;
+        background: linear-gradient(135deg, #002147 0%, #004080 100%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 60px 20px;
+    }
+
+    .testimonials-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+    }
+
+    .testimonials-hero h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .testimonials-hero p {
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+     .testimonials-section-hospital {
+        max-width: 1440px;
+        margin: 40px auto;
+        padding: 40px 20px;
+    }
+
+    .section-header-hospital {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-header-hospital h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 10px;
+        border: none;
+    }
+
+    .section-header-hospital p {
+        font-size: 15px;
+        color: #666;
+    }
+
+     .testimonials-grid-hospital {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card-hospital {
+        background: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonial-card-hospital:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-color: #d0d0d0;
+    }
+
+    .quote-icon-hospital {
+        width: 32px;
+        height: 24px;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-text-hospital {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .author-info-hospital {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .author-avatar-hospital {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .author-avatar-hospital img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .author-name-hospital {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin-bottom: 3px;
+    }
+
+    .author-title-hospital {
+        font-size: 13px;
+        color: #666;
+    }
+
+    @media (max-width: 768px) {
+        .testimonials-grid-hospital {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    
+</style>
+
+<div class="testimonials-page-wrapper">
+    <!-- Hero Section -->
+    <section class="testimonials-hero">
+        <div class="testimonials-hero-content">
+            <h1>Client Testimonials</h1>
+            <p>Hear from healthcare providers who trust AMD SOL for their medical billing and revenue cycle management needs.</p>
+        </div>
+    </section>
+ <!-- Testimonials Section -->
+        <section class="testimonials-section-hospital">
+            <div class="testimonials-grid-hospital">
+                @forelse($testimonials as $testimonial)
+                <div class="testimonial-card-hospital">
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
+                    <p class="testimonial-text-hospital">{!! $testimonial->text !!}</p>
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
+                    <div class="author-info-hospital">
+                        <div class="author-avatar-hospital">
+                            @if(isset($testimonial->image) && $testimonial->image)
+                                <img src="{{ asset('assets/images/' . $testimonial->image) }}" alt="{{ $testimonial->name }}">
+                            @else
+                                <img src="https://ui-avatars.com/api/?name={{ urlencode($testimonial->name) }}&size=100&background=002147&color=fff" alt="{{ $testimonial->name }}">
+                            @endif
+                        </div>
+                        <div class="author-details-hospital">
+                            <div class="author-name-hospital">{{ $testimonial->name }}</div>
+                            <div class="author-title-hospital">{{ $testimonial->designation ?? 'Healthcare Provider' }}</div>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <!-- Dummy Testimonial 1 -->
+                <div class="testimonial-card-hospital">
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
+                    <p class="testimonial-text-hospital">As a practice manager, I was looking to streamline the medical billing process. I tried other companies, but they were all complicated and took too much of my time. Fortunately, I found Amd Solutions. They excel in tailoring solutions to fit my requirements.</p>
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
+                    <div class="author-info-hospital">
+                        <div class="author-avatar-hospital">
+                            <img src="https://ui-avatars.com/api/?name=Steve+Vaugh&size=100&background=002147&color=fff" alt="Steve Vaugh">
+                        </div>
+                        <div class="author-details-hospital">
+                            <div class="author-name-hospital">Steve Vaugh</div>
+                            <div class="author-title-hospital">Practice Manager<br>Wilson Creek Internal Medicine</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Testimonial 2 -->
+                <div class="testimonial-card-hospital">
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
+                    <p class="testimonial-text-hospital">Our hospital billing has never been more efficient. The team's expertise in complex claim management and denial resolution has significantly improved our revenue cycle. Their attention to detail and proactive approach makes them an invaluable partner.</p>
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
+                    <div class="author-info-hospital">
+                        <div class="author-avatar-hospital">
+                            <img src="https://ui-avatars.com/api/?name=Michael+Anderson&size=100&background=002147&color=fff" alt="Michael Anderson">
+                        </div>
+                        <div class="author-details-hospital">
+                            <div class="author-name-hospital">Michael Anderson</div>
+                            <div class="author-title-hospital">CFO<br>Regional Medical Center</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Testimonial 3 -->
+                <div class="testimonial-card-hospital">
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
+                    <p class="testimonial-text-hospital">Switching to this billing service was the best decision for our hospital. They handle everything from credentialing to payment posting with remarkable accuracy. Our days in AR have decreased by 40% and cash flow has never been better.</p>
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
+                    <div class="author-info-hospital">
+                        <div class="author-avatar-hospital">
+                            <img src="https://ui-avatars.com/api/?name=David+Martinez&size=100&background=002147&color=fff" alt="David Martinez">
+                        </div>
+                        <div class="author-details-hospital">
+                            <div class="author-name-hospital">David Martinez</div>
+                            <div class="author-title-hospital">Revenue Cycle Director<br>Community Healthcare System</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Testimonial 4 -->
+                <div class="testimonial-card-hospital">
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
+                    <p class="testimonial-text-hospital">The transparency and reporting capabilities are outstanding. We receive detailed analytics that help us make informed decisions. Their team is responsive, knowledgeable, and truly invested in our success. Highly recommend for any hospital system.</p>
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
+                    <div class="author-info-hospital">
+                        <div class="author-avatar-hospital">
+                            <img src="https://ui-avatars.com/api/?name=Robert+Thompson&size=100&background=002147&color=fff" alt="Robert Thompson">
+                        </div>
+                        <div class="author-details-hospital">
+                            <div class="author-name-hospital">Robert Thompson</div>
+                            <div class="author-title-hospital">Administrator<br>Metropolitan Hospital Network</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Testimonial 5 -->
+                <div class="testimonial-card-hospital">
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
+                    <p class="testimonial-text-hospital">Working with AMD SOL has transformed our practice operations. Their medical billing expertise and dedicated support team have helped us increase collections by 35%. The seamless integration with our EHR system makes everything so much easier.</p>
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
+                    <div class="author-info-hospital">
+                        <div class="author-avatar-hospital">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&size=100&background=002147&color=fff" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-details-hospital">
+                            <div class="author-name-hospital">Sarah Johnson</div>
+                            <div class="author-title-hospital">Office Manager<br>Idaho Kidney & Hypertension Institute</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Testimonial 6 -->
+                <div class="testimonial-card-hospital">
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
+                    <p class="testimonial-text-hospital">I cannot speak highly enough about the professionalism and efficiency of this billing company. They've reduced our claim denials significantly and their monthly reports give us clear insights into our financial health. A true partner in our success.</p>
+                    <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
+                    <div class="author-info-hospital">
+                        <div class="author-avatar-hospital">
+                            <img src="https://ui-avatars.com/api/?name=Jennifer+Williams&size=100&background=002147&color=fff" alt="Jennifer Williams">
+                        </div>
+                        <div class="author-details-hospital">
+                            <div class="author-name-hospital">Jennifer Williams</div>
+                            <div class="author-title-hospital">Practice Manager<br>Harding Memorial Healthcare</div>
+                        </div>
+                    </div>
+                </div>
+                @endforelse
+            </div>
+        </section>
+  
+@endsection

@@ -19,12 +19,12 @@
                 </p>
                 
                 <!-- Inline Form -->
-                <form action="{{ url('contact-us.php') }}" method="POST" class="hero-inline-form">
+                <form action="{{ url('contact-us.php') }}" method="POST" class="hero-inline-form" id="heroForm">
                     @csrf
                     <div class="form-row-inline">
-                        <input type="text" name="name" class="form-input-hero" placeholder="Name" required>
-                        <input type="email" name="email" class="form-input-hero" placeholder="Email" required>
-                        <input type="text" name="phone" class="form-input-hero" placeholder="Phone Number" required>
+                        <input type="text" name="name" id="heroName" class="form-input-hero" placeholder="Name" required pattern="[A-Za-z\s]+" title="Please enter letters only">
+                        <input type="email" name="email" class="form-input-hero" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
+                        <input type="text" name="phone" id="heroPhone" class="form-input-hero" placeholder="Phone Number" required pattern="[0-9]+" title="Please enter numbers only">
                     </div>
                     <div class="form-action-row">
                         <button type="submit" class="btn-consultation">GET A FREE REVENUE ADUIT</button>
@@ -40,6 +40,54 @@
                         </div>
                     </div>
                 </form>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Name field - only letters and spaces
+                        const heroNameField = document.getElementById('heroName');
+                        if (heroNameField) {
+                            heroNameField.addEventListener('keydown', function(e) {
+                                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End', ' '];
+                                if (!allowedKeys.includes(e.key) && !/[A-Za-z\s]/.test(e.key)) {
+                                    e.preventDefault();
+                                }
+                            });
+
+                            heroNameField.addEventListener('input', function(e) {
+                                this.value = this.value.replace(/[^A-Za-z\s]/g, '');
+                            });
+
+                            heroNameField.addEventListener('paste', function(e) {
+                                e.preventDefault();
+                                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                                const lettersOnly = pastedText.replace(/[^A-Za-z\s]/g, '');
+                                this.value = lettersOnly;
+                            });
+                        }
+
+                        // Phone field - only numbers
+                        const heroPhoneField = document.getElementById('heroPhone');
+                        if (heroPhoneField) {
+                            heroPhoneField.addEventListener('keydown', function(e) {
+                                const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'];
+                                if (!allowedKeys.includes(e.key) && !/[0-9]/.test(e.key)) {
+                                    e.preventDefault();
+                                }
+                            });
+
+                            heroPhoneField.addEventListener('input', function(e) {
+                                this.value = this.value.replace(/[^0-9]/g, '');
+                            });
+
+                            heroPhoneField.addEventListener('paste', function(e) {
+                                e.preventDefault();
+                                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                                const numericOnly = pastedText.replace(/[^0-9]/g, '');
+                                this.value = numericOnly;
+                            });
+                        }
+                    });
+                </script>
             </div>
             
             <div class="col-lg-6 col-12 mt-4 mt-lg-0 order-1 order-lg-2">
@@ -231,7 +279,7 @@
                         <li><i class="fa fa-check-circle"></i> Real-time analytics and financial reporting dashbaords.</li>
                         <li><i class="fa fa-check-circle"></i> Seamless integration with leading EHR/EMR platforms.</li>
                     </ul>
-                    <a href="{{ url('contact-us.php') }}" class="btn btn-light mt-4 px-5 py-3" style="color: var(--primary); font-weight: 700; border-radius: 8px; font-size: 16px; letter-spacing: 0.5px;">GET A FREE QUOTE</a>
+                    <a href="{{ url('contact-us.php') }}" class="btn btn-light mt-4 px-4 py-2" style="color: var(--primary); font-weight: 700; border-radius: 6px; font-size: 14px; letter-spacing: 0.5px;">GET FREE QUOTE</a>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block">
                     <img src="{{ asset('assets/images/doctors-icon.png') }}" alt="Expertise" class="img-fluid" style="filter: brightness(0) invert(1); opacity: 0.1;">
@@ -405,7 +453,7 @@
                             <h3>DEXA – Denial Experience and Analytics Agent</h3>
                             <p>DEXA revolutionizes denial management by turning payer rejections into revenue opportunities. This AI agent detects, analyzes, and resolves denials in real time. <strong>DEXA documents each call outcome</strong> in real time and <strong>updates claim statuses</strong> automatically in the EHR or billing software.</p>
                             <p>More importantly, this AI RCM tool <strong>auto-categorizes</strong> critical denials, generates appeal letters, and even calls payers to verify claim details.</p>
-                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/DEXA-Dashboard.webp') }}" alt="DEXA Dashboard" class="dashboard-img">
@@ -420,7 +468,7 @@
                             <h3>CLAIR – Claim Status and Insurance Follow-up Agent</h3>
                             <p>CLAIR automates the tedious task of following up on outstanding claims. It <strong>communicates directly with insurance portals</strong> to retrieve real-time adjudication status, reducing the need for manual follow-up calls.</p>
                             <p>By identifying bottlenecks early, CLAIR ensures that <strong>unpaid claims are addressed immediately</strong>, significantly shortening your AR days and improving cash flow.</p>
-                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/CLAIR-Dashboard.webp') }}" alt="CLAIR Dashboard" class="dashboard-img">
@@ -435,7 +483,7 @@
                             <h3>CODIN – AI-powered Medical Coding Agent</h3>
                             <p>CODIN uses advanced NLP to scan clinical documentation and <strong>assign accurate ICD-10 and CPT codes</strong>. It minimizes human error and ensures compliance with ever-changing coding guidelines.</p>
                             <p>This intelligent agent <strong>flags potential coding issues</strong> before submission, drastically reducing the chances of medical necessity denials.</p>
-                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/CODIN-Dashboard.webp') }}" alt="CODIN Dashboard" class="dashboard-img">
@@ -450,7 +498,7 @@
                             <h3>ARIS – Accounts Receivable Insurance Specialist</h3>
                             <p>ARIS specializes in managing your aging accounts. It <strong>prioritizes high-value claims</strong> and those nearing timely filing limits, ensuring no revenue is left on the table.</p>
                             <p>With ARIS, your team can focus on complex cases while the AI handles <strong>routine AR tasks and reporting</strong> with precision and speed.</p>
-                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/ARIS-Dashboard.webp') }}" alt="ARIS Dashboard" class="dashboard-img">
@@ -465,7 +513,7 @@
                             <h3>ELIXA – Eligibility and Insurance Verification Agent</h3>
                             <p>ELIXA ensures that every patient's insurance is <strong>verified before the appointment</strong>. It checks coverage, co-pays, and deductibles in seconds, preventing eligibility-related denials.</p>
                             <p>By automating the front-end of the revenue cycle, ELIXA <strong>enhances patient experience</strong> and reduces administrative burden on your front-desk staff.</p>
-                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/ELIXA-Dashboard.webp') }}" alt="ELIXA Dashboard" class="dashboard-img">
@@ -480,7 +528,7 @@
                             <h3>PRIA – Prior Authorization Agent</h3>
                             <p>PRIA streamlines the complex prior authorization process. It <strong>collects required clinical data</strong> and submits requests to payers automatically, tracking them until approval is received.</p>
                             <p>With PRIA, you can <strong>reduce treatment delays</strong> and ensure that all services rendered are pre-approved for payment.</p>
-                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/PRIA-Dashboard.webp') }}" alt="PRIA Dashboard" class="dashboard-img">
@@ -495,7 +543,7 @@
                             <h3>REMITA – Payment Posting and Remittance Advice Agent</h3>
                             <p>REMITA automates the posting of payments and adjustments from ERAs and EOBs. It <strong>reconciles payments against claims</strong> with 100% accuracy, highlighting any discrepancies.</p>
                             <p>Speed up your closing process and <strong>get real-time visibility</strong> into your practice's financial health with REMITA's intelligent posting.</p>
-                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/REMITA-Dashboard.webp') }}" alt="REMITA Dashboard" class="dashboard-img">
@@ -757,7 +805,7 @@
                 </div>
                 <div class="knowledge-card-body">
                     <p>Make informed decisions about your practice success with real-time feedback. Explore Clients' thoughts!</p>
-                    <a href="#" class="knowledge-btn">View Testimonials</a>
+                    <a href="{{ url('testimonials') }}" class="knowledge-btn">View Testimonials</a>
                 </div>
             </div>
         </div>

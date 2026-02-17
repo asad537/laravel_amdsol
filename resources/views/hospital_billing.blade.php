@@ -202,13 +202,13 @@
     .hospital-service-item {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 15px;
     }
 
     .hospital-service-item::before {
         content: "";
-        width: 20px;
-        height: 20px;
+        width: 32px;
+        height: 32px;
         background-image: url('{{ asset('assets/images/hospital/hospital-img/location-arrow 1.png') }}');
         background-size: contain;
         background-repeat: no-repeat;
@@ -217,7 +217,7 @@
     }
 
     .hospital-service-item span {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: #1a1a2e;
         font-weight: 500;
     }
@@ -254,6 +254,48 @@
     .affordable-section-header p {
         font-size: 1.5rem;
         color: #000000;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 968px) {
+        .affordable-section-header h2 {
+            font-size: 2rem;
+        }
+
+        .affordable-section-header p {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .affordable-section-header {
+            margin-bottom: 40px;
+            padding: 0 15px;
+        }
+
+        .affordable-section-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .affordable-section-header p {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .affordable-section-header {
+            margin-bottom: 30px;
+        }
+
+        .affordable-section-header h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .affordable-section-header p {
+            font-size: 1rem;
+        }
     }
 
     .affordable-content-wrapper {
@@ -310,7 +352,7 @@
     }
 
     .affordable-accordion-icon {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: 300;
         transition: transform 0.3s ease;
         flex-shrink: 0;
@@ -318,7 +360,16 @@
     }
 
     .affordable-accordion-checkbox:checked + .affordable-accordion-header .affordable-accordion-icon {
-        transform: rotate(45deg);
+        content: '-';
+        transform: rotate(0deg);
+    }
+
+    .affordable-accordion-checkbox:checked + .affordable-accordion-header .affordable-accordion-icon::before {
+        content: '-';
+    }
+
+    .affordable-accordion-icon::before {
+        content: '+';
     }
 
     .affordable-accordion-content {
@@ -495,6 +546,58 @@
         }
     }
 
+    @media (max-width: 768px) {
+        .rcm-feature-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 25px;
+        }
+
+        .rcm-icon-container {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .rcm-icon-container img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .rcm-card-content h3 {
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .rcm-card-content p {
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .rcm-content-wrapper {
+            padding: 0 20px;
+        }
+
+        .rcm-left-content {
+            max-width: 100%;
+        }
+
+        .rcm-right-cards {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .rcm-card-content h3 {
+            font-size: 2em;
+        }
+
+        .rcm-card-content p {
+            font-size: 1.5rem;
+        }
+    }
+
     .transform-billing-section {
         background-color: #0a2540;
         padding: 60px 20px;
@@ -530,8 +633,30 @@
         background-color: #ffffff;
         border-radius: 15px;
         padding: 35px 30px;
-        text-align: center;
+        text-align: left;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .transform-card-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(15, 46, 77, 0.1);
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+    .transform-card-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(13%) sepia(35%) saturate(2084%) hue-rotate(188deg) brightness(95%) contrast(97%);
     }
 
     .transform-card:hover {
@@ -543,26 +668,85 @@
         font-size: 2rem;
         color: #1a1a2e;
         font-weight: 600;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         line-height: 1.3;
+        text-align: left;
     }
 
     .transform-card p {
         font-size: 1.5rem;
         color: #000000;
         line-height: 1.7;
-        text-align: center;
+        text-align: left;
     }
 
     @media (max-width: 1024px) {
         .transform-cards-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .transform-container {
+            padding: 0 40px;
+        }
+
+        .transform-card h3 {
+            font-size: 1.6rem;
+        }
+
+        .transform-card p {
+            font-size: 1.3rem;
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
         .transform-cards-grid {
             grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .transform-container {
+            padding: 0 20px;
+        }
+
+        .transform-header {
+            margin-bottom: 40px;
+        }
+
+        .transform-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .transform-card {
+            padding: 30px 25px;
+        }
+
+        .transform-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transform-card p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .transform-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .transform-card {
+            padding: 25px 20px;
+        }
+
+        .transform-card h3 {
+            font-size: 1.3rem;
+        }
+
+        .transform-card p {
+            font-size: 1.1rem;
         }
     }
 
@@ -722,18 +906,116 @@
     .cta-request-btn-hospital {
         background-color: white;
         color: #002147;
-        padding: 14px 45px;
-        font-size: 16px;
+        padding: 10px 28px;
+        font-size: 14px;
         font-weight: 600;
-        border-radius: 30px;
+        border-radius: 25px;
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
     }
 
     @media (max-width: 768px) {
+        .cta-container-hospital {
+            border-radius: 20px;
+            padding: 40px 20px;
+            min-height: auto;
+            margin: 20px;
+        }
+
         .cta-container-hospital h2 {
-            font-size: 32px;
+            font-size: 24px !important;
+        }
+
+        .cta-content-hospital p {
+            font-size: 16px;
+        }
+
+        .cta-request-btn-hospital {
+            padding: 9px 24px;
+            font-size: 13px;
+        }
+
+        .hospital-services-grid {
+            grid-template-columns: 1fr !important;
+            gap: 15px;
+        }
+
+        .hospital-service-item span {
+            font-size: 1.1rem;
+        }
+
+        .hospital-service-item::before {
+            width: 24px;
+            height: 24px;
+        }
+
+        .affordable-content-wrapper {
+            flex-direction: column !important;
+        }
+
+        .affordable-left-content {
+            max-width: 100% !important;
+        }
+
+        .affordable-image-container {
+            max-width: 100% !important;
+            margin-top: 30px;
+        }
+
+        .affordable-section-header h2 {
+            font-size: 1.8rem !important;
+        }
+
+        .affordable-accordion-header {
+            padding: 15px 18px !important;
+        }
+
+        .affordable-accordion-content p {
+            font-size: 1.2rem !important;
+        }
+
+        .rcm-content-wrapper {
+            flex-direction: column !important;
+        }
+
+        .rcm-left-content {
+            max-width: 100% !important;
+        }
+
+        .rcm-image-container {
+            max-width: 100% !important;
+            margin-top: 30px;
+        }
+
+        .transform-cards-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .transform-header h2 {
+            font-size: 1.8rem !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cta-container-hospital h2 {
+            font-size: 20px !important;
+        }
+
+        .cta-content-hospital p {
+            font-size: 14px;
+        }
+
+        .hospital-service-item span {
+            font-size: 1rem;
+        }
+
+        .affordable-section-header h2 {
+            font-size: 1.5rem !important;
+        }
+
+        .transform-header h2 {
+            font-size: 1.5rem !important;
         }
     }
 </style>
@@ -795,7 +1077,7 @@
                             <input type="checkbox" id="acc-billing-1" class="affordable-accordion-checkbox">
                             <label for="acc-billing-1" class="affordable-accordion-header">
                                 <span>Insurance claims processing</span>
-                                <span class="affordable-accordion-icon">+</span>
+                                <span class="affordable-accordion-icon"></span>
                             </label>
                             <div class="affordable-accordion-content">
                                 <p>We handle the complete insurance claims lifecycle, from submission to follow-up. Our expert team ensures accurate coding, timely filing, and proper documentation to maximize claim acceptance rates and minimize denials.</p>
@@ -805,7 +1087,7 @@
                             <input type="checkbox" id="acc-billing-2" class="affordable-accordion-checkbox">
                             <label for="acc-billing-2" class="affordable-accordion-header">
                                 <span>Patient billing and invoicing</span>
-                                <span class="affordable-accordion-icon">+</span>
+                                <span class="affordable-accordion-icon"></span>
                             </label>
                             <div class="affordable-accordion-content">
                                 <p>Our patient billing services provide clear, itemized statements that improve transparency and patient satisfaction. We manage the entire invoicing process, including payment plans and patient communications, to optimize collections.</p>
@@ -815,13 +1097,32 @@
                             <input type="checkbox" id="acc-billing-3" class="affordable-accordion-checkbox">
                             <label for="acc-billing-3" class="affordable-accordion-header">
                                 <span>Payment posting and reconciliation</span>
-                                <span class="affordable-accordion-icon">+</span>
+                                <span class="affordable-accordion-icon"></span>
                             </label>
                             <div class="affordable-accordion-content">
                                 <p>We accurately post all payments and adjustments to patient accounts in real-time. Our reconciliation process ensures your financial records match payer remittances, providing complete visibility into your revenue cycle performance.</p>
                             </div>
                         </div>
                     </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const accordionCheckboxes = document.querySelectorAll('.affordable-accordion-checkbox');
+                            
+                            accordionCheckboxes.forEach(function(checkbox) {
+                                checkbox.addEventListener('change', function() {
+                                    if (this.checked) {
+                                        // Close all other accordions
+                                        accordionCheckboxes.forEach(function(otherCheckbox) {
+                                            if (otherCheckbox !== checkbox) {
+                                                otherCheckbox.checked = false;
+                                            }
+                                        });
+                                    }
+                                });
+                            });
+                        });
+                    </script>
                 </div>
                 <div class="affordable-image-container">
                     <div class="affordable-image-wrapper">
@@ -888,18 +1189,30 @@
                 </div>
                 <div class="transform-cards-grid">
                     <div class="transform-card">
+                        <div class="transform-card-icon">
+                            <img src="{{ asset('assets/images/hospital/hospital-img/shield-check (1) 1.png') }}" alt="EHR Integration">
+                        </div>
                         <h3>EHR Integration</h3>
                         <p>Seamlessly integrate with your existing EHR system to ensure accurate data flow, reduced manual entry, and fewer billing errors. Our integration streamlines workflows and improves overall revenue cycle efficiency.</p>
                     </div>
                     <div class="transform-card">
+                        <div class="transform-card-icon">
+                            <img src="{{ asset('assets/images/hospital/hospital-img/shield-check (1) 1.png') }}" alt="Security">
+                        </div>
                         <h3>Security and Compliance</h3>
                         <p>Protect patient data with strict HIPAA-compliant processes and industry-leading security standards. We ensure your billing operations remain secure, compliant, and audit-ready at all times.</p>
                     </div>
                     <div class="transform-card">
+                        <div class="transform-card-icon">
+                            <img src="{{ asset('assets/images/hospital/hospital-img/Vector (52).png') }}" alt="Automation">
+                        </div>
                         <h3>Billing Automation</h3>
                         <p>Automate repetitive billing tasks to reduce errors, speed up claim processing, and improve cash flow. Our smart automation tools enhance accuracy and operational efficiency.</p>
                     </div>
                     <div class="transform-card">
+                        <div class="transform-card-icon">
+                            <img src="{{ asset('assets/images/hospital/hospital-img/chart-histogram 1.png') }}" alt="Telehealth">
+                        </div>
                         <h3>Telehealth Billing</h3>
                         <p>Accurately manage telehealth claims with up-to-date coding and payer guidelines. We ensure proper documentation and timely reimbursement for virtual care services.</p>
                     </div>

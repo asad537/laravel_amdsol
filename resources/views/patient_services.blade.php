@@ -763,7 +763,7 @@
                 <div class="testimonial-card">
                     <div class="quote-icon-top"><img src="{{ asset('assets/images/patient-services/Simplification (1).png') }}" alt="quote"></div>
                     <p class="testimonial-text">
-                        The billing process was simple and transparent. I could easily review my charges, track payments, and stay updated without any confusion, which made the entire experience stressfree.
+                        The billing process was simple and transparent. I could easily review my charges, track payments, and stay updated without any confusion, 
                     </p>
                     <div class="quote-icon-bottom"><img src="{{ asset('assets/images/patient-services/Simplification (2).png') }}" alt="quote"></div>
                     <div class="author-info">
