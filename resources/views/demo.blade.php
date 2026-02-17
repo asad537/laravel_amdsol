@@ -154,9 +154,10 @@
 
     .demo-page-wrapper h1 {
         text-align: left;
+        font-size: 2.5em;
         color: #1a2b4a;
-        font-size: 2em;
-        margin-bottom: 30px;
+        font-weight: 700;
+        margin-bottom: 35px;
         position: relative;
     }
 
@@ -169,8 +170,9 @@
 
     .left-section-demo h2 {
         color: #1a2b4a;
-        font-size: 2em;
-        margin-bottom: 20px;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        font-weight: 700;
     }
 
     .benefits-list-demo {
@@ -181,10 +183,10 @@
     .benefits-list-demo li {
         display: flex;
         align-items: flex-start;
-        margin-bottom: 15px;
+        font-size: 1.3rem;
+        margin-bottom: 22px;
         color: #2c3e50;
-        font-size: 1.5 rem;
-        line-height: 1.5;
+        line-height: 1.7;
     }
 
     .benefits-list-demo li::before {
@@ -192,14 +194,14 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 24px;
-        height: 24px;
+        width: 38px;
+        height: 38px;
         background-color: #1a2b4a;
         color: white;
         border-radius: 50%;
-        margin-right: 15px;
+        margin-right: 18px;
         font-weight: bold;
-        font-size: 0.8em;
+        font-size: 1.1em;
         flex-shrink: 0;
         margin-top: 2px;
     }
@@ -220,17 +222,17 @@
         display: block;
         color: #1a2b4a;
         font-weight: 600;
-        margin-bottom: 5px;
-        font-size: 1.5 rem;
+        margin-bottom: 8px;
+        font-size: 1.5rem;
     }
 
     .form-group-demo input,
     .form-group-demo textarea {
         width: 100%;
-        padding: 8px 10px;
+        padding: 14px 16px;
         border: 1px solid #d1d9e6;
         border-radius: 6px;
-        font-size: 1.5 rem;
+        font-size: 1.1rem;
         font-family: inherit;
         transition: border-color 0.3s ease;
         background-color: #fafbfc;
@@ -247,9 +249,9 @@
         background-color: #1a2b4a;
         color: white;
         border: none;
-        padding: 10px 30px;
+        padding: 16px 50px;
         border-radius: 8px;
-        font-size: 0.95em;
+        font-size: 1.2rem;
         font-weight: 600;
         cursor: pointer;
         float: right;

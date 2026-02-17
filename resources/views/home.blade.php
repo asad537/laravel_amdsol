@@ -231,7 +231,7 @@
                         <li><i class="fa fa-check-circle"></i> Real-time analytics and financial reporting dashbaords.</li>
                         <li><i class="fa fa-check-circle"></i> Seamless integration with leading EHR/EMR platforms.</li>
                     </ul>
-                    <a href="{{ url('contact-us.php') }}" class="btn btn-light mt-4 px-5 py-3" style="color: var(--primary); font-weight: 700; border-radius: 5px;">GET A FREE QUOTE</a>
+                    <a href="{{ url('contact-us.php') }}" class="btn btn-light mt-4 px-5 py-3" style="color: var(--primary); font-weight: 700; border-radius: 8px; font-size: 16px; letter-spacing: 0.5px;">GET A FREE QUOTE</a>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block">
                     <img src="{{ asset('assets/images/doctors-icon.png') }}" alt="Expertise" class="img-fluid" style="filter: brightness(0) invert(1); opacity: 0.1;">
@@ -331,7 +331,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="{{ url('contact-us.php') }}" class="specialties-cta-btn">
+            <a href="{{ url('specialties') }}" class="specialties-cta-btn">
                 View More Specialties
             </a>
         </div>
@@ -374,7 +374,7 @@
         </div>
 
         <div class="mt-4">
-            <a href="#" class="ehr-explore-btn">Explore More</a>
+            <a href="{{ url('electronic-health-records') }}" class="ehr-explore-btn">Explore More</a>
         </div>
     </div>
 </section>

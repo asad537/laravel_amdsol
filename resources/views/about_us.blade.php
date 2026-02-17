@@ -165,7 +165,7 @@
             top: 25px;
             left: 30px;
             filter: brightness(0) invert(1);
-            opacity: 0.4;
+            opacity: 1;
         }
 
         .quote-box::after {
@@ -186,7 +186,7 @@
             right: 30px;
             width: 35px;
             height: 35px;
-            opacity: 0.4;
+            opacity: 1;
             transform: rotate(180deg);
             filter: brightness(0) invert(1);
         }

@@ -8,19 +8,28 @@
     <meta name="google-site-verification" content="b4ou-sLla8wDu3s7-gAB9K_J5Hhlta_vKlWr5mFLZqo" />
     <meta name="ROBOTS" CONTENT="INDEX,FOLLOW">
     <script>
-        // Save scroll position before page unload
+        // Save scroll position and current page before unload
         window.addEventListener('beforeunload', function() {
             sessionStorage.setItem('scrollPosition', window.scrollY);
+            sessionStorage.setItem('lastPage', window.location.pathname);
         });
         
-        // Restore scroll position after page load
+        // Restore scroll position only if returning to same page
         window.addEventListener('DOMContentLoaded', function() {
             const scrollPosition = sessionStorage.getItem('scrollPosition');
-            if (scrollPosition) {
+            const lastPage = sessionStorage.getItem('lastPage');
+            const currentPage = window.location.pathname;
+            
+            // Only restore if it's the same page (e.g., after form submission)
+            if (scrollPosition && lastPage === currentPage) {
                 setTimeout(function() {
                     window.scrollTo(0, parseInt(scrollPosition));
                 }, 100);
             }
+            
+            // Clear stored position after use
+            sessionStorage.removeItem('scrollPosition');
+            sessionStorage.removeItem('lastPage');
         });
     </script>
     
