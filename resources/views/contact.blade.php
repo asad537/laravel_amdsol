@@ -429,7 +429,7 @@
 <div class="contact-main-wrapper">
     <!-- Contact Hero Section -->
     <section class="contact-hero-section">
-        <img src="{{ asset('assets/images/contact/contact-img/contactus.png') }}" alt="Contact Us" class="mobile-hero-img">
+        <img src="{{ asset('assets/images/contact/contact-img/contactus.jpg') }}" alt="Contact Us" class="mobile-hero-img">
         <div class="contact-container">
             <div class="contact-hero-content">
                 <h1>Contact Us</h1>

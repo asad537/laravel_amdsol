@@ -372,7 +372,7 @@
     .hc-services-heading {
         font-size: 36px;
         font-weight: 600;
-        color: #002147;
+        color: #ffff;
         margin-bottom: 12px;
     }
 

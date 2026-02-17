@@ -207,7 +207,7 @@
                     </div>
                     <h4 class="service-card-title">Medical Billing Consultation</h4>
                     <p class="service-card-text">Expert patient billers offer the most complete medical billing services that entail handling check-in/out, claims, payments, and denials for health care providers.</p>
-                    <a href="#" class="service-explore-btn">Explore More</a>
+                    <a href="{{ url('medical-billing-outsourcing') }}" class="service-explore-btn">Explore More</a>
                 </div>
       </div>
 
@@ -218,7 +218,7 @@
                     </div>
                     <h4 class="service-card-title">Medical Coding</h4>
                     <p class="service-card-text">Clinical coding officers translate patient services into ICD-10 and CPT codes and generate a clean "super-bill" for the biller to submit to the insurance payer.</p>
-                    <a href="#" class="service-explore-btn">Explore More</a>
+                    <a href="{{ url('medical-billing-outsourcing') }}" class="service-explore-btn">Explore More</a>
                 </div>
       </div>
 
@@ -229,7 +229,7 @@
                     </div>
                     <h4 class="service-card-title">Provider Credentialing</h4>
                     <p class="service-card-text">Provider enrollment services by our credentialing specialists help healthcare providers join the network of desirable payors with maximum privileges.</p>
-                    <a href="#" class="service-explore-btn">Explore More</a>
+                    <a href="{{ url('medical-billing-outsourcing') }}" class="service-explore-btn">Explore More</a>
                 </div>
       </div>
 
@@ -240,7 +240,7 @@
                     </div>
                     <h4 class="service-card-title">Healthcare RCM</h4>
                     <p class="service-card-text">Revenue cycle management services are specialty-specific, which means a physician's bespoke demands are met by a dedicated medical biller.</p>
-                    <a href="#" class="service-explore-btn">Explore More</a>
+                    <a href="{{ url('medical-billing-outsourcing') }}" class="service-explore-btn">Explore More</a>
                 </div>
             </div>
     </div>
@@ -379,12 +379,24 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="{{ url('specialties') }}" class="specialties-cta-btn">
+            <a href="{{ url('specialties') }}" class="specialties-cta-btn" id="viewMoreSpecialtiesBtn">
                 View More Specialties
             </a>
         </div>
     </div>
 </section>
+
+<script>
+    // Remove focus from View More Specialties button after click
+    document.addEventListener('DOMContentLoaded', function() {
+        const viewMoreBtn = document.getElementById('viewMoreSpecialtiesBtn');
+        if (viewMoreBtn) {
+            viewMoreBtn.addEventListener('click', function() {
+                this.blur();
+            });
+        }
+    });
+</script>
 
 <!-- EHR Section -->
 <section class="ehr-section">

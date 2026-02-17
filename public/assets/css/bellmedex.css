@@ -1269,10 +1269,25 @@ header .container {
     box-shadow: 0 10px 25px rgba(0, 33, 71, 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.specialties-cta-btn:hover{
+
+.specialties-cta-btn:hover {
     background: var(--primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 33, 71, 0.2);
+    color: #fff;
+    text-decoration: none;
+}
+
+.specialties-cta-btn:focus,
+.specialties-cta-btn:active,
+.specialties-cta-btn:visited {
+    color: #ffffff;
+    text-decoration: none;
+    outline: none;
+}
+
+.specialties-cta-btn:focus:hover,
+.specialties-cta-btn:active:hover {
     color: #fff;
 }
     

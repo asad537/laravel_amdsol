@@ -8,14 +8,10 @@
     <meta name="google-site-verification" content="b4ou-sLla8wDu3s7-gAB9K_J5Hhlta_vKlWr5mFLZqo" />
     <meta name="ROBOTS" CONTENT="INDEX,FOLLOW">
     <script>
-        // Ensure pages always load from top
+        // Prevent browser from restoring scroll position on back/forward
         if (history.scrollRestoration) {
             history.scrollRestoration = 'manual';
         }
-        
-        window.addEventListener('beforeunload', function() {
-            window.scrollTo(0, 0);
-        });
     </script>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">

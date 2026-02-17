@@ -232,15 +232,24 @@
         padding: 0 0 30px 0;
         background-image: none !important;
         flex-direction: column;
+        background-color: #002147;
     }
 
     .hero-section::before {
         display: none;
     }
 
+    .mobile-hero-img {
+        display: block !important;
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
     .hero-content {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 0 20px 20px 20px;
         text-align: center;
         width: 100%;
     }
@@ -249,24 +258,23 @@
         font-size: 28px;
         text-align: center;
         max-width: 100%;
+        padding-bottom: 10px;
     }
 
     .hero-section p {
         text-align: center;
         max-width: 100%;
-    }
-    
-    .mobile-hero-img {
-        display: block !important;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        margin-bottom: 20px;
+        font-size: 16px;
     }
 
     /* Mobile Cards Responsive */
     .articles-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .article-card img {
+        height: 200px;
     }
 }
 
@@ -322,7 +330,7 @@
 </style>
 
 <section class="hero-section">
-    <img src="{{ asset("assets/images/blog/blog_page.jpeg") }}" alt="Blogs" class="mobile-hero-img">
+    <img src="{{ asset('assets/images/blog/blog_page .jpeg') }}" alt="Blogs" class="mobile-hero-img">
     <div class="hero-content">
         <h1>Blogs</h1>
         <p>
