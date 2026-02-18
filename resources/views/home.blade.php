@@ -200,7 +200,7 @@
       </div>
 
         <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-6 mb-4 service-card-container">
                 <div class="service-card-hover">
                     <div class="service-icon-box">
                         <i class="fa fa-user-md"></i>
@@ -211,7 +211,7 @@
                 </div>
       </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-6 mb-4 service-card-container">
                 <div class="service-card-hover">
                     <div class="service-icon-box">
                         <i class="fa fa-code"></i>
@@ -222,7 +222,7 @@
                 </div>
       </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-6 mb-4 service-card-container">
                 <div class="service-card-hover">
                     <div class="service-icon-box">
                         <i class="fa fa-id-card"></i>
@@ -233,7 +233,7 @@
                 </div>
       </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-6 mb-4 service-card-container">
                 <div class="service-card-hover">
                     <div class="service-icon-box">
                         <i class="fa fa-heartbeat"></i>

@@ -1960,15 +1960,16 @@ header .container {
     z-index: 0;
 }
 
-.service-card-hover:hover::before {
+.service-card-container:hover .service-card-hover::before {
     transform: translateY(0);
 }
 
-.service-card-hover:hover {
+.service-card-container:hover .service-card-hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 50px rgba(0, 33, 71, 0.15);
     border-color: var(--primary-dark);
 }
+
 
 /* Service Icon Box */
 .service-icon-box {
@@ -1992,12 +1993,12 @@ header .container {
 }
 
 /* Change icon on hover for all cards */
-.service-card-hover:hover .service-icon-box {
+.service-card-container:hover .service-icon-box {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
 }
 
-.service-card-hover:hover .service-icon-box i {
+.service-card-container:hover .service-icon-box i {
     color: #ffffff;
 }
 
@@ -2013,7 +2014,7 @@ header .container {
 }
 
 /* Change text color on hover for all cards */
-.service-card-hover:hover .service-card-title {
+.service-card-container:hover .service-card-title {
     color: #ffffff;
 }
 
@@ -2029,7 +2030,7 @@ header .container {
 }
 
 /* Change text color on hover for all cards */
-.service-card-hover:hover .service-card-text {
+.service-card-container:hover .service-card-text {
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -2054,7 +2055,7 @@ header .container {
 }
 
 /* Change button on hover for all cards */
-.service-card-hover:hover .service-explore-btn {
+.service-card-container:hover .service-explore-btn {
     background: #ffffff;
     color: var(--primary-dark);
     border-color: #ffffff;
