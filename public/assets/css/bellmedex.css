@@ -808,6 +808,16 @@ header .container {
     opacity: 1;
 }
 
+@media (max-width: 767px) {
+    .form-input-hero {
+        height: 45px !important;
+        min-height: 45px !important;
+        line-height: normal !important;
+        font-size: 15px !important;
+        padding: 0 15px !important;
+    }
+}
+
 .form-action-row {
     display: flex;
     align-items: center;
