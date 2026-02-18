@@ -271,7 +271,7 @@
     <div class="container">
         <div class="indigo-box">
             <div class="row align-items-center">
-                <div class="col-lg-7">
+                <div class="col-lg-7 order-2 order-lg-1">
                     <h2>Transforming Your Practice <br>Through Technical Expertise</h2>
                     <ul>
                         <li><i class="fa fa-check-circle"></i> 24/7 Live Patient Support for all 32+ specialties.</li>
@@ -281,8 +281,8 @@
                     </ul>
                     <a href="{{ url('contact-us.php') }}" class="btn btn-light mt-4 px-4 py-2" style="color: var(--primary); font-weight: 700; border-radius: 6px; font-size: 14px; letter-spacing: 0.5px;">GET FREE QUOTE</a>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                    <img src="{{ asset('assets/images/doctors-icon.png') }}" alt="Expertise" class="img-fluid" style="filter: brightness(0) invert(1); opacity: 0.1;">
+                <div class="col-lg-5 mt-4 mt-lg-0 order-1 order-lg-2 mb-4 mb-lg-0">
+                    <img src="{{ asset('assets/images/expertise-new.jpeg') }}" alt="Expertise" class="img-fluid rounded shadow-lg">
                 </div>
             </div>
         </div>
