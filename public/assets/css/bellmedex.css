@@ -4551,6 +4551,7 @@ header .container {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 50%;
     z-index: 1;
+    pointer-events: none;
 }
 
 .ai-dashboard-section::after {
@@ -4563,6 +4564,7 @@ header .container {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 50%;
     z-index: 1;
+    pointer-events: none;
 }
 
 .dashboard-slider-title {
@@ -4659,6 +4661,8 @@ header .container {
 
 .carousel-indicators {
     bottom: -35px !important;
+    z-index: 100 !important;
+    pointer-events: auto;
 }
 
 .carousel-indicators li {
