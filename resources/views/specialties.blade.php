@@ -2,6 +2,20 @@
 
 @section('content')
 <style>
+    /* Main Page Wrapper - Fixed Width Container */
+    .specialties-page-wrapper {
+        max-width: 1920px;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .specialties-page {
+        width: 100%;
+        margin: 0 auto;
+    }
+
     /* Provided CSS */
     .hero-section {
         width: 100%;
@@ -148,7 +162,7 @@
         display: none;
     }
     .billing-solutions {
-        padding: 35px 20px 30px;
+        padding: 60px 40px;
         text-align: center;
         background-color: #ffffff;
         width: 100%;
@@ -396,19 +410,19 @@
 
     /* Affordable Billing Solutions Section */
     .about-section-custom {
-        padding: 20px 20px 10px;
+        padding: 60px 40px;
         background-color: #f8f9fa;
     }
 
     @media (max-width: 768px) {
         .about-section-custom {
-            padding: 20px 15px 10px;
+            padding: 50px 30px;
         }
     }
 
     @media (max-width: 480px) {
         .about-section-custom {
-            padding: 15px 10px 10px;
+            padding: 40px 20px;
         }
     }
 
@@ -592,30 +606,31 @@
 
     /* Boost Revenue Section */
     .boost-section-custom {
-        padding: 10px 20px 20px;
+        padding: 80px 40px;
         background-color: #ffffff;
     }
 
     .boost-container-custom {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 20px;
     }
 
     .boost-header-custom {
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 50px;
     }
 
     .boost-header-custom h2 {
-        font-size: 28px;
+        font-size: 36px;
         font-weight: 700;
         color: #002147;
-        margin-bottom: 11px;
+        margin-bottom: 15px;
         line-height: 1.2;
     }
 
     .boost-subtitle {
-        font-size: 15px;
+        font-size: 16px;
         color: #333;
         font-weight: 400;
         max-width: 750px;
@@ -625,26 +640,28 @@
     .boost-content-custom {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 35px;
+        gap: 50px;
         align-items: center;
     }
 
     .boost-description-custom {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.8;
         color: #333;
         text-align: justify;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+        padding: 0 20px;
     }
 
     .boost-img {
         width: 100%;
-        max-width: 428px;
-        height: 380px;
+        max-width: 500px;
+        height: 400px;
         border-radius: 30px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         display: block;
         object-fit: cover;
+        margin: 0 auto;
     }
 
     .boost-pricing-btn {
@@ -703,28 +720,85 @@
 
     @media (max-width: 768px) {
         .boost-section-custom {
-            padding: 20px 15px;
+            padding: 50px 20px;
         }
 
-        .boost-header-custom h2 {
+        .boost-container-custom {
+            display: block;
+        }
+
+        .boost-header-custom {
+            display: none;
+        }
+
+        .boost-content-custom {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .boost-content-custom::before {
+            content: 'Boost Revenue with Expert Medical Billing Services';
             font-size: 26px;
+            font-weight: 700;
+            color: #002147;
+            text-align: center;
+            margin-bottom: 15px;
+            order: 2;
+            line-height: 1.2;
         }
 
-        .boost-subtitle {
+        .boost-content-custom::after {
+            content: 'Maximize reimbursements, reduce denials, and streamline your revenue cycle.';
             font-size: 14px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 25px;
+            order: 3;
+        }
+
+        .boost-image {
+            order: 1;
+            margin-bottom: 25px;
+        }
+
+        .boost-text {
+            display: flex;
+            flex-direction: column;
+            order: 4;
         }
 
         .boost-description-custom {
             font-size: 15px;
             line-height: 1.7;
+            padding: 0 10px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .boost-pricing-btn {
+            align-self: center;
         }
 
         .boost-img {
             height: 300px;
+            max-width: 100%;
         }
     }
 
     @media (max-width: 480px) {
+        .boost-section-custom {
+            padding: 40px 15px;
+        }
+        
+        .boost-content-custom::before {
+            font-size: 22px;
+        }
+        
+        .boost-content-custom::after {
+            font-size: 13px;
+        }
+
         .boost-header-custom h2 {
             font-size: 22px;
         }
@@ -1143,6 +1217,7 @@
     }
 </style>
 
+<div class="specialties-page-wrapper">
 <div class="specialties-page">
     <section class="hero-section">
         <img src="{{ asset('assets/images/specialties/hero-specilization.jpg') }}" alt="Specialties" class="mobile-hero-img">
@@ -1329,6 +1404,7 @@
             </form>
         </div>
     </section>
+</div>
 </div>
 @endsection
 
