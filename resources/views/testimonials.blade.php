@@ -2,40 +2,144 @@
 
 @section('content')
 <style>
-    .testimonials-page-wrapper {
+    .hospital-billing-wrapper {
         font-family: 'Poppins', sans-serif;
-        background: #f8f9fa;
+        background: #ffffff;
     }
 
-    .testimonials-hero {
+    .hospital-billing-wrapper * {
+        box-sizing: border-box;
+    }
+
+    .hospital-billing-container {
+        max-width: 1440px;
         width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    /* Add proper spacing between sections */
+    .hospital-billing-wrapper section {
+        margin-bottom: 30px;
+    }
+
+    .hospital-billing-wrapper section:last-child {
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .hospital-billing-wrapper section {
+            margin-bottom: 20px;
+        }
+        
+        .hospital-billing-wrapper section:last-child {
+            margin-bottom: 15px;
+        }
+    }
+
+    .hero-section-hospital {
+        width: 100%;
+        max-width: 100%;
         min-height: 350px;
-        background: linear-gradient(135deg, #002147 0%, #004080 100%);
+        background-color: #1a3a5c;
+        background-image: url('{{ asset('assets/images//testinomial/testinomial hero.jpg') }}');
+        background-size: cover;
+        background-position: center right;
+        background-repeat: no-repeat;
         position: relative;
         display: flex;
         align-items: center;
-        padding: 60px 20px;
+        overflow: hidden;
+        padding: 40px 20px;
+        margin: 0 0 40px 0;
     }
 
-    .testimonials-hero-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-        color: white;
+    @media (max-width: 1024px) {
+        .hero-section-hospital {
+            min-height: 380px;
+            padding: 50px 20px;
+            margin-bottom: 80px;
+        }
     }
 
-    .testimonials-hero h1 {
-        font-size: 48px;
+    @media (max-width: 768px) {
+        .hero-section-hospital {
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+        }
+        
+        .hero-section-hospital::before {
+            display: none;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
+    }
+
+    .hero-section-hospital::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right,
+                rgba(10, 25, 45, 1) 0%,
+                rgba(10, 25, 45, 0.98) 20%,
+                rgba(10, 25, 45, 0.92) 35%,
+                rgba(10, 25, 45, 0.80) 50%,
+                rgba(10, 25, 45, 0.55) 65%,
+                rgba(10, 25, 45, 0.25) 80%,
+                transparent 90%);
+        z-index: 1;
+    }
+
+    .hero-content-hospital {
+        position: relative;
+        z-index: 2;
+        padding-left: 80px;
+        max-width: 600px;
+    }
+
+    .hero-section-hospital h1 {
+        width: 100%;
+        font-size: 34px;
         font-weight: 700;
+        color: white !important;
+        line-height: 1.2;
         margin-bottom: 20px;
-        color: white;
+        border: none;
     }
 
-    .testimonials-hero p {
-        font-size: 20px;
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 700px;
-        margin: 0 auto;
+    .hero-section-hospital p {
+        font-size: 18px;
+        font-weight: 400;
+        color: white;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+        .hero-content-hospital {
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 100%;
+        }
+        .hero-section-hospital h1 {
+            font-size: 28px;
+        }
     }
      .testimonials-section-hospital {
         max-width: 1440px;
@@ -141,14 +245,17 @@
     
 </style>
 
-<div class="testimonials-page-wrapper">
-    <!-- Hero Section -->
-    <section class="testimonials-hero">
-        <div class="testimonials-hero-content">
-            <h1>Client Testimonials</h1>
-            <p>Hear from healthcare providers who trust AMD SOL for their medical billing and revenue cycle management needs.</p>
-        </div>
-    </section>
+<div class="hospital-billing-wrapper">
+    <div class="hospital-billing-container">
+        <!-- Hero Section -->
+        <section class="hero-section-hospital">
+        <img src="{{ asset('assets/images//testinomial/testinomial hero.jpg') }}" alt="Hero Image" class="mobile-hero-img">
+            <div class="hero-content-hospital">
+                <h1>Trusted by Healthcare Providers Nationwide</h1>
+                <p>See how our medical billing solutions help practices
+increase revenue and reduce denials.</p>
+            </div>
+        </section>
  <!-- Testimonials Section -->
         <section class="testimonials-section-hospital">
             <div class="testimonials-grid-hospital">

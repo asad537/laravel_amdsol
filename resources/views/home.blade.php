@@ -271,18 +271,22 @@
     <div class="container">
         <div class="indigo-box">
             <div class="row align-items-center">
-                <div class="col-lg-7 order-2 order-lg-1">
-                    <h2>Transforming Your Practice <br>Through Technical Expertise</h2>
-                    <ul>
+                <div class="col-lg-6 order-lg-1 order-1">
+                    <h2 class="expertise-heading">Transforming Your Practice <br class="d-none d-lg-block">Through Technical Expertise</h2>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-2">
+                    <img src="{{ asset('images/banners/expertise-new.png') }}" alt="Medical Expertise" class="img-fluid expertise-image">
+                </div>
+                <div class="col-lg-6 order-lg-1 order-3">
+                    <ul class="expertise-list">
                         <li><i class="fa fa-check-circle"></i> 24/7 Live Patient Support for all 32+ specialties.</li>
                         <li><i class="fa fa-check-circle"></i> Dedicated Account Managers for personalized attention.</li>
                         <li><i class="fa fa-check-circle"></i> Real-time analytics and financial reporting dashbaords.</li>
                         <li><i class="fa fa-check-circle"></i> Seamless integration with leading EHR/EMR platforms.</li>
                     </ul>
-                    <a href="{{ url('contact-us.php') }}" class="btn btn-light mt-4 px-4 py-2" style="color: var(--primary); font-weight: 700; border-radius: 6px; font-size: 14px; letter-spacing: 0.5px;">GET FREE QUOTE</a>
-                </div>
-                <div class="col-lg-5 mt-4 mt-lg-0 order-1 order-lg-2 mb-4 mb-lg-0">
-                    <img src="{{ asset('assets/images/expertise-new.jpeg') }}" alt="Expertise" class="img-fluid rounded shadow-lg">
+                    <div class="book-demo-wrapper">
+                        <a href="{{ url('contact-us.php') }}" class="book-demo-badge">Book a Demo</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -465,7 +469,7 @@
                             <h3>DEXA – Denial Experience and Analytics Agent</h3>
                             <p>DEXA revolutionizes denial management by turning payer rejections into revenue opportunities. This AI agent detects, analyzes, and resolves denials in real time. <strong>DEXA documents each call outcome</strong> in real time and <strong>updates claim statuses</strong> automatically in the EHR or billing software.</p>
                             <p>More importantly, this AI RCM tool <strong>auto-categorizes</strong> critical denials, generates appeal letters, and even calls payers to verify claim details.</p>
-                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
+                            <a href="{{ url('services') }}" class="dashboard-btn">Explore AI</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/DEXA-Dashboard.webp') }}" alt="DEXA Dashboard" class="dashboard-img">
@@ -480,7 +484,7 @@
                             <h3>CLAIR – Claim Status and Insurance Follow-up Agent</h3>
                             <p>CLAIR automates the tedious task of following up on outstanding claims. It <strong>communicates directly with insurance portals</strong> to retrieve real-time adjudication status, reducing the need for manual follow-up calls.</p>
                             <p>By identifying bottlenecks early, CLAIR ensures that <strong>unpaid claims are addressed immediately</strong>, significantly shortening your AR days and improving cash flow.</p>
-                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
+                            <a href="{{ url('services') }}" class="dashboard-btn">Explore AI</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/CLAIR-Dashboard.webp') }}" alt="CLAIR Dashboard" class="dashboard-img">
@@ -495,7 +499,7 @@
                             <h3>CODIN – AI-powered Medical Coding Agent</h3>
                             <p>CODIN uses advanced NLP to scan clinical documentation and <strong>assign accurate ICD-10 and CPT codes</strong>. It minimizes human error and ensures compliance with ever-changing coding guidelines.</p>
                             <p>This intelligent agent <strong>flags potential coding issues</strong> before submission, drastically reducing the chances of medical necessity denials.</p>
-                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
+                            <a href="{{ url('services') }}" class="dashboard-btn">Explore AI</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/CODIN-Dashboard.webp') }}" alt="CODIN Dashboard" class="dashboard-img">
@@ -510,7 +514,7 @@
                             <h3>ARIS – Accounts Receivable Insurance Specialist</h3>
                             <p>ARIS specializes in managing your aging accounts. It <strong>prioritizes high-value claims</strong> and those nearing timely filing limits, ensuring no revenue is left on the table.</p>
                             <p>With ARIS, your team can focus on complex cases while the AI handles <strong>routine AR tasks and reporting</strong> with precision and speed.</p>
-                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
+                            <a href="{{ url('services') }}" class="dashboard-btn">Explore AI</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/ARIS-Dashboard.webp') }}" alt="ARIS Dashboard" class="dashboard-img">
@@ -525,7 +529,7 @@
                             <h3>ELIXA – Eligibility and Insurance Verification Agent</h3>
                             <p>ELIXA ensures that every patient's insurance is <strong>verified before the appointment</strong>. It checks coverage, co-pays, and deductibles in seconds, preventing eligibility-related denials.</p>
                             <p>By automating the front-end of the revenue cycle, ELIXA <strong>enhances patient experience</strong> and reduces administrative burden on your front-desk staff.</p>
-                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
+                            <a href="{{ url('services') }}" class="dashboard-btn">Explore AI</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/ELIXA-Dashboard.webp') }}" alt="ELIXA Dashboard" class="dashboard-img">
@@ -540,7 +544,7 @@
                             <h3>PRIA – Prior Authorization Agent</h3>
                             <p>PRIA streamlines the complex prior authorization process. It <strong>collects required clinical data</strong> and submits requests to payers automatically, tracking them until approval is received.</p>
                             <p>With PRIA, you can <strong>reduce treatment delays</strong> and ensure that all services rendered are pre-approved for payment.</p>
-                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
+                            <a href="{{ url('services') }}" class="dashboard-btn">Explore AI</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/PRIA-Dashboard.webp') }}" alt="PRIA Dashboard" class="dashboard-img">
@@ -555,7 +559,7 @@
                             <h3>REMITA – Payment Posting and Remittance Advice Agent</h3>
                             <p>REMITA automates the posting of payments and adjustments from ERAs and EOBs. It <strong>reconciles payments against claims</strong> with 100% accuracy, highlighting any discrepancies.</p>
                             <p>Speed up your closing process and <strong>get real-time visibility</strong> into your practice's financial health with REMITA's intelligent posting.</p>
-                            <a href="{{ url('medical-billing-outsourcing') }}" class="dashboard-btn">Learn More</a>
+                            <a href="{{ url('services') }}" class="dashboard-btn">Explore AI</a>
                         </div>
                         <div class="dashboard-image-box">
                             <img src="{{ asset('assets/images/dashboard/REMITA-Dashboard.webp') }}" alt="REMITA Dashboard" class="dashboard-img">

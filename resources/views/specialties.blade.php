@@ -327,7 +327,7 @@
     .see-more-btn {
         background-color: #002147;
         color: #fff;
-        border: none;
+        border: 1px solid #002147;
         padding: 11px 35px;
         font-size: 14px;
         font-weight: 600;
@@ -336,24 +336,29 @@
         font-family: 'Poppins', sans-serif;
         display: inline-block;
         text-decoration: none;
-        /* transition: all 0.3s ease; */
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 10;
     }
 
     .see-more-btn:hover {
         background-color: #ffffff;
         border: 1px solid #000000;
         color: #000000;
+        text-decoration: none;
     }
 
     .see-more-btn:focus {
         outline: none;
         color: #fff;
         background-color: #002147;
+        border: 1px solid #002147;
     }
 
     .see-more-btn:active {
         color: #fff;
         background-color: #002147;
+        border: 1px solid #002147;
     }
 
     @media (max-width: 480px) {
@@ -551,7 +556,7 @@
     .pricing-btn {
         background-color: #002147;
         color: #ffff;
-        border: 2px solid #002147;
+        border: 1px solid #002147;
         padding: 10px 30px;
         font-size: 14px;
         font-weight: 600;
@@ -561,12 +566,28 @@
         transition: all 0.3s ease;
         display: inline-block;
         text-decoration: none;
+        position: relative;
+        z-index: 10;
     }
 
     .pricing-btn:hover {
         background-color: #ffff;
         color: #000000;
+        border: 1px solid #000000;
         text-decoration: none;
+    }
+
+    .pricing-btn:focus {
+        outline: none;
+        color: #fff;
+        background-color: #002147;
+        border: 1px solid #002147;
+    }
+
+    .pricing-btn:active {
+        color: #fff;
+        background-color: #002147;
+        border: 1px solid #002147;
     }
 
     /* Boost Revenue Section */
@@ -586,7 +607,7 @@
     }
 
     .boost-header-custom h2 {
-        font-size: 36px;
+        font-size: 28px;
         font-weight: 700;
         color: #002147;
         margin-bottom: 11px;
@@ -595,7 +616,7 @@
 
     .boost-subtitle {
         font-size: 15px;
-        color: #000000;
+        color: #333;
         font-weight: 400;
         max-width: 750px;
         margin: 0 auto;
@@ -609,8 +630,8 @@
     }
 
     .boost-description-custom {
-        font-size: 16px;
-        line-height: 31px;
+        font-size: 15px;
+        line-height: 1.8;
         color: #333;
         text-align: justify;
         margin-bottom: 25px;
@@ -629,7 +650,7 @@
     .boost-pricing-btn {
         background-color: #002147;
         color: white;
-        border: 2px solid #002147;
+        border: 1px solid #002147;
         padding: 9px 28px;
         font-size: 14px;
         font-weight: 600;
@@ -639,6 +660,8 @@
         transition: all 0.3s ease;
         display: inline-block;
         text-decoration: none;
+        position: relative;
+        z-index: 10;
     }
 
     .boost-pricing-btn:hover {
@@ -646,6 +669,19 @@
         color: #000000;
         border: 1px solid #000000;
         text-decoration: none;
+    }
+
+    .boost-pricing-btn:focus {
+        outline: none;
+        color: #fff;
+        background-color: #002147;
+        border: 1px solid #002147;
+    }
+
+    .boost-pricing-btn:active {
+        color: #fff;
+        background-color: #002147;
+        border: 1px solid #002147;
     }
 
     @media (max-width: 968px) {
@@ -728,7 +764,7 @@
 
     .ehr-subtitle {
         font-size: 16px;
-        color: #000000;
+        color: #333;
         max-width: 800px;
         margin: 0 auto 25px;
         line-height: 1.6;
@@ -856,7 +892,7 @@
         padding: 40px 30px;
         background: white;
         border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 17px 12px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease;
     }
 
@@ -894,7 +930,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 20px;
         max-width: 700px;
-        margin: 0 auto;
+        margin: 15px auto;
     }
 
     .form-container-custom input {
@@ -923,6 +959,91 @@
         opacity: 0.14;
         z-index: 1;
         pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+        .medical-icon {
+            opacity: 0.12;
+        }
+        
+        .medical-icon[style*="top: 10%; left: 8%"] {
+            top: 8% !important;
+            left: 5% !important;
+            width: 80px !important;
+        }
+        
+        .medical-icon[style*="top: 2%; left: 45%"] {
+            top: 3% !important;
+            left: 42% !important;
+            width: 65px !important;
+        }
+        
+        .medical-icon[style*="top: 5%; right: 10%"] {
+            top: 6% !important;
+            right: 5% !important;
+            width: 75px !important;
+        }
+        
+        .medical-icon[style*="bottom: 10%; left: 10%"] {
+            bottom: 8% !important;
+            left: 5% !important;
+            width: 80px !important;
+        }
+        
+        .medical-icon[style*="bottom: 5%; left: 55%"] {
+            bottom: 4% !important;
+            left: 50% !important;
+            width: 80px !important;
+        }
+        
+        .medical-icon[style*="bottom: 25%; right: 5%"] {
+            bottom: 21% !important;
+            right: 2% !important;
+            width: 85px !important;
+            z-index: 1;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .medical-icon {
+            opacity: 0.10;
+        }
+        
+        .medical-icon[style*="top: 10%; left: 8%"] {
+            top: 6% !important;
+            left: 3% !important;
+            width: 65px !important;
+        }
+        
+        .medical-icon[style*="top: 2%; left: 45%"] {
+            top: 2% !important;
+            left: 40% !important;
+            width: 55px !important;
+        }
+        
+        .medical-icon[style*="top: 5%; right: 10%"] {
+            top: 5% !important;
+            right: 3% !important;
+            width: 60px !important;
+        }
+        
+        .medical-icon[style*="bottom: 10%; left: 10%"] {
+            bottom: 6% !important;
+            left: 3% !important;
+            width: 65px !important;
+        }
+        
+        .medical-icon[style*="bottom: 5%; left: 55%"] {
+            bottom: 3% !important;
+            left: 48% !important;
+            width: 65px !important;
+        }
+        
+        .medical-icon[style*="bottom: 25%; right: 5%"] {
+            bottom: 18% !important;
+            right: 2% !important;
+            width: 70px !important;
+        }
     }
 
     /* CTA Pricing Section */

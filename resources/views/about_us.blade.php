@@ -24,7 +24,7 @@
 
         html, body {
             width: 100%;
-            overflow-x: hidden;
+            /* overflow-x: hidden; */
         }
 
         body {
@@ -792,7 +792,7 @@
         .flow-circle {
             width: 150px;
             height: 150px;
-            border: 4px solid #1e3a8a;
+            border: 0.5px solid #1e3a8a;
             border-radius: 50%;
             background: #fff;
             display: flex;
@@ -814,7 +814,7 @@
             bottom: 0;
             border-radius: 50%;
             background: #fff;
-            border: 4px solid #1e3a8a;
+            border: 3px solid #1e3a8a;
             transition: filter 0.3s ease;
             z-index: 1;
         }

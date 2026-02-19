@@ -149,7 +149,7 @@
     .healthcare-doctor-image {
         width: 100%;
         max-width: 500px;
-        height: 350px;
+        height: 300px;
         object-fit: cover;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -157,7 +157,7 @@
     }
 
     .healthcare-text-section {
-        padding: 60px 50px;
+        padding: 40px 50px;
     }
 
     .healthcare-main-heading {
@@ -189,7 +189,7 @@
 
     .billing-services-wrapper {
         width: 100%;
-        padding: 60px 97px;
+        padding: 40px 97px;
         background-color: #f8f9fa;
     }
 
@@ -249,7 +249,7 @@
 
     .billing-card-description {
         font-size: 14px;
-        color: #666;
+        color: #000000;
         line-height: 1.6;
         text-align: left;
     }
@@ -303,7 +303,7 @@
 
     .simplify-description-text {
         font-size: 14px;
-        color: #666;
+        color: #000000;
         line-height: 1.5;
         margin-bottom: 15px;
         text-align: justify;
@@ -317,7 +317,7 @@
 
     .simplify-features-list li {
         font-size: 14px;
-        color: #333;
+        color: #000000;
         margin-bottom: 8px;
         padding-left: 22px;
         position: relative;
@@ -338,7 +338,6 @@
         width: 100%;
         max-width: 450px;
         height: auto;
-        max-height: 320px;
         object-fit: cover;
         border-radius: 12px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -356,12 +355,16 @@
 
         .simplify-billing-image {
             max-width: 100%;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
         }
     }
 
     .impact-numbers-wrapper {
         width: 100%;
-        padding: 80px 97px;
+        padding: 50px 97px;
         background-color: #002147;
     }
 
@@ -406,7 +409,7 @@
     }
 
     .ehr-section {
-        padding: 80px 97px;
+        padding: 50px 97px;
         background-color: #ffffff;
     }
 
@@ -421,7 +424,7 @@
 
     .ehr-subtitle {
         font-size: 16px;
-        color: #666;
+        color: #000000;
         text-align: center;
         max-width: 800px;
         margin: 0 auto 50px;
@@ -572,6 +575,16 @@
             padding: 25px 30px;
         }
 
+        .healthcare-doctor-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .healthcare-image-container {
+            padding: 0;
+        }
+
         .billing-services-wrapper {
             padding: 60px 30px;
         }
@@ -605,6 +618,15 @@
     @media (max-width: 480px) {
         .healthcare-services-wrapper {
             padding: 25px 20px;
+        }
+
+        .healthcare-doctor-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .healthcare-image-container {
+            padding: 0;
         }
 
         .billing-services-wrapper {
@@ -786,29 +808,32 @@
         </section>
 
         <!-- Testimonial section placeholders (integrated as standard layout) -->
-        <section class="faq-section testimonial-section" style="padding: 80px 97px; background-color: #fbfbfb; text-align: center;">
-            <h2 style="font-size: 36px; font-weight: 700; color: #1a1a2e; margin-bottom: 50px; border: none;">Driving Growth for Healthcare Organizations</h2>
+        <section class="faq-section testimonial-section" style="padding: 50px 97px; background-color: #fbfbfb; text-align: center;">
+            <h2 style="font-size: 36px; font-weight: 700; color: #1a1a2e; margin-bottom: 40px; border: none;">Driving Growth for Healthcare Organizations</h2>
             <div class="ehr-grid testimonial-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
                 <div style="background: #fff; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: left;">
                     <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (1).png') }}" alt="Quote" style="width: 32px; margin-bottom: 15px;">
-                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Working with Practice Fusion and ProgonCIS has been a game-changer for our practice. The workflow became smoother, documentation faster, and patient management significantly improved. Highly recommended for growing healthcare practices.</p>
-                    <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px;">
+                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 15px;">Working with Practice Fusion and ProgonCIS has been a game-changer for our practice. The workflow became smoother, documentation faster, and patient management significantly improved. Highly recommended for growing healthcar.</p>
+                    <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (2).png') }}" alt="Quote End" style="width: 32px; margin-bottom: 15px; float: right;">
+                    <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px; clear: both;">
                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Michael" style="width: 50px; height: 50px; border-radius: 50%;">
                         <div><div style="font-weight: 600; color: #1a1a2e;">Michael Anderson</div><div style="font-size: 13px; color: #666;">Practice Manager</div></div>
                     </div>
                 </div>
                 <div style="background: #fff; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: left;">
                     <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (1).png') }}" alt="Quote" style="width: 32px; margin-bottom: 15px;">
-                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Harris CareTracker took our healthcare operations to the next level. The accurate reporting, reliable performance, and user-friendly interface made our providers' work much easier. A truly trusted healthcare solution.</p>
-                    <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px;">
+                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 15px;">Harris CareTracker took our healthcare operations to the next level. The accurate reporting, reliable performance, and user-friendly interface made our providers' work much easier. A truly trusted healthcare solution.</p>
+                    <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (2).png') }}" alt="Quote End" style="width: 32px; margin-bottom: 15px; float: right;">
+                    <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px; clear: both;">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="David" style="width: 50px; height: 50px; border-radius: 50%;">
                         <div><div style="font-weight: 600; color: #1a1a2e;">David Martinez</div><div style="font-size: 13px; color: #666;">Office Manager</div></div>
                     </div>
                 </div>
                 <div style="background: #fff; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: left;">
                     <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (1).png') }}" alt="Quote" style="width: 32px; margin-bottom: 15px;">
-                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Driving growth for healthcare organizations is not just a claim but a reality. These platforms improved efficiency, patient satisfaction, and overall productivity. The trust from nationwide providers is completely justified.</p>
-                    <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px;">
+                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 15px;">Driving growth for healthcare organizations is not just a claim but a reality. These platforms improved efficiency, patient satisfaction, and overall productivity. The trust from nationwide providers is completely justified.</p>
+                    <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (2).png') }}" alt="Quote End" style="width: 32px; margin-bottom: 15px; float: right;">
+                    <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px; clear: both;">
                         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Robert" style="width: 50px; height: 50px; border-radius: 50%;">
                         <div><div style="font-weight: 600; color: #1a1a2e;">Robert Thompson</div><div style="font-size: 13px; color: #666;">Practice Manager</div></div>
                     </div>

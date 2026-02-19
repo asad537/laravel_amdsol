@@ -455,7 +455,7 @@
                         </div>
                         <div class="contact-touch-info-content">
                             <h3>Head Office</h3>
-                            <p>123 AMD Solutions, 23 ST<br>New York, NY 2201</p>
+                            <p>9933 Franklin Ave Suite 103<br>Franklin Park, IL 60131</p>
                         </div>
                     </div>
 
@@ -468,7 +468,7 @@
                         </div>
                         <div class="contact-touch-info-content">
                             <h3>Email Us</h3>
-                            <p>Support@Amdsol.com<br>Head@Amdsol.com</p>
+                            <p>info@amdsol.com</p>
                         </div>
                     </div>
 
@@ -481,7 +481,7 @@
                         </div>
                         <div class="contact-touch-info-content">
                             <h3>Call Us</h3>
-                            <p>1-847-737-3401<br>1-847-737-3501</p>
+                            <p>+1 (847) 737-3401</p>
                         </div>
                     </div>
                 </div>
@@ -489,7 +489,13 @@
                 <div class="contact-touch-right">
                     <div class="contact-touch-images">
                         <img src="{{ asset('assets/images/contact/contact-img/conatctcard1.jpg') }}" alt="Office Building">
-                        <img src="{{ asset('assets/images/contact/contact-img/contactcard2.png') }}" alt="Office Location Map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=9933+Franklin+Ave+Suite+103,Franklin+Park,IL+60131&zoom=15" 
+                            style="border:0; border-radius: 15px; width: 100%; height: 100%;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>

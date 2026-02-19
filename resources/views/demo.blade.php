@@ -304,7 +304,7 @@
         }
 
         .benefits-list-demo li {
-            font-size: 0.8em;
+            font-size: 1.4rem;
             margin-bottom: 12px;
         }
 

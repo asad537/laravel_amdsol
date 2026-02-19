@@ -465,12 +465,12 @@
 
     /* Process Section */
     .process-section-large {
-        background: white;
+        
         border-radius: 20px;
         padding: 50px 97px;
         max-width: 1200px;
         margin: 40px auto;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+       
     }
 
     .process-content-large {
@@ -687,7 +687,7 @@
     .success-metrics-section {
         width: 100%;
         padding: 60px 97px;
-        background-color: #f8f9fa;
+        
     }
 
     .success-metrics-section .container {

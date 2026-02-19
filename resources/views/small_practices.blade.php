@@ -15,7 +15,7 @@
         max-width: 1440px;
         width: 100%;
         margin: 0 auto;
-        overflow: hidden;
+        /* overflow: hidden; */
         padding: 0;
     }
 
@@ -165,7 +165,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 60px 80px;
+        padding: 40px 80px;
         background-color: #ffffff;
     }
 
@@ -189,7 +189,7 @@
         width: 100%;
         /* max-width: 420px; */
         height: auto;
-        object-fit: cover;
+        object-fit: contain;
         border-radius: 20px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
@@ -233,21 +233,20 @@
         .healthcare-doctor-image-small {
             max-width: 100%;
             width: 100%;
-            min-height: 350px;
-            height: 350px;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
         }
     }
 
     .billing-services-container-small {
         width: 100%;
-        padding: 60px 20px;
+        padding: 40px 20px;
         background-color: #ffffff;
     }
 
     .billing-header-section-small {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
 
     .billing-main-title-small {
@@ -343,7 +342,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0px 80px 60px 80px;
+        padding: 40px 80px;
         background-color: #ffffff;
     }
 
@@ -356,16 +355,30 @@
         display: grid;
         grid-template-columns: 45% 55%;
         gap: 50px;
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .challenges-image-section-small {
+        display: flex;
+        align-items: stretch;
     }
 
     .challenges-image-small {
-        width:100%;
-        height:357px ;
-        /* max-width: 420px; */
         
+        width:100%;
+        height: 100%;
+        min-height: 400px;
+        /* max-width: 420px; */
+        margin: 10px;
+        object-fit: cover;
         border-radius: 20px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .challenges-text-section-small {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .challenges-main-heading-small {
@@ -403,8 +416,9 @@
         .challenges-image-small {
             max-width: 100%;
             width: 100%;
-            min-height: 350px;
-            height: 350px;
+            height: auto;
+            min-height: auto;
+            margin: 0;
             object-fit: cover;
         }
     }
@@ -413,8 +427,8 @@
         width: 100%;
         max-width: 1200px;
         margin: 0px auto;
-        background: #f5f7fa;
-        padding: 60px 80px;
+        
+        padding: 40px 80px;
     }
 
     .timeline-wrapper-small h2 {
@@ -430,7 +444,7 @@
         text-align: center;
         font-size: 1.5rem;
         color: #000000;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     .timeline-small {
@@ -446,7 +460,9 @@
         left: 50%;
         transform: translateX(-50%);
         width: 3px;
-        height: 100%;
+        top: 30px;
+        bottom: 80px;
+        height: auto;
         background: linear-gradient(to bottom, #1e3a5f, #2c5282);
     }
 
@@ -522,6 +538,9 @@
         
         .timeline-small::before {
             left: 25px;
+            top: 30px;
+            bottom: 80px;
+            height: auto;
         }
         
         .timeline-item-small {
@@ -553,7 +572,7 @@
 
     /* Specialties Grid */
     .billing-solutions-small {
-        padding: 60px 20px;
+        padding: 40px 20px;
         background-color: #ffffff;
         text-align: center;
     }
@@ -659,7 +678,7 @@
         background-color: #002147;
         color: white;
         border: none;
-        padding: 11px 35px;
+        padding: 6px 35px;
         font-size: 14px;
         font-weight: 600;
         border-radius: 8px;
@@ -680,7 +699,7 @@
     .cta-container-small {
         background: linear-gradient(135deg, #001a33 0%, #002d5a 100%);
         border-radius: 40px;
-        padding: 60px 40px;
+        padding: 40px 40px;
         display: flex;
         justify-content: center;
         align-items: center;

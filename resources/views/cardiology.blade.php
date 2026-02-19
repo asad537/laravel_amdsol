@@ -1,13 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardiology Page</title>
-    <style>
+<style>
  * {
             margin: 0;
             padding: 0;
@@ -28,6 +22,13 @@
             width: 100%;
             margin: 0 auto;
             padding: 0;
+        }
+        
+        /* Footer should be full width */
+        footer .container,
+        .footer-bell .container {
+            max-width: 100% !important;
+            padding: 0 !important;
         }
         
         header .container {
@@ -1360,9 +1361,6 @@
 
     </style>
     
-</head>
-
-<body>
      <div class="container">
         <section class="hero-section">
             <img src="{{ asset('assets/images/cardiology/cardiology.jpg') }}" alt="Hero Image" class="mobile-hero-img">
@@ -1768,6 +1766,7 @@ up on unpaid claims months later, ensuring timely and accurate reimbursements.
                         Supervised exercise and education programs for patients recovering from cardiac events.
                     </div>
                 </div>
+                
               
      </div>
         @include('partials.cta-section', [
@@ -1777,6 +1776,4 @@ up on unpaid claims months later, ensuring timely and accurate reimbursements.
     'buttonLink' => url('contact-us.php')
 ])
 
-</body>
-</html>
 @endsection

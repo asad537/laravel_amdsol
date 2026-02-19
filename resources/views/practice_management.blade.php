@@ -101,10 +101,10 @@
         grid-template-columns: 1fr 1fr;
         gap: 20px;
         align-items: center;
-        background: white;
+       
         padding: 60px;
         border-radius: 20px;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); */
     }
 
     .practice-mgmt-image-wrapper {
@@ -253,7 +253,7 @@
         background: white;
         padding: 60px;
         border-radius: 20px;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); */
     }
 
     .practice-benefits-content {

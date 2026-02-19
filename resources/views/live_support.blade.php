@@ -111,6 +111,8 @@
         cursor: pointer;
         transition: all 0.3s ease;
         border-bottom: 1px solid #e1e8ed;
+        text-decoration: none;
+        color: inherit;
     }
 
     .support-card:nth-child(odd) {
@@ -134,17 +136,24 @@
         transition: color 0.3s ease;
     }
 
-    .support-card:hover {
+    .support-card:hover,
+    .support-card:focus,
+    .support-card:active {
         background-color: #002147;
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(0, 33, 71, 0.3);
+        text-decoration: none;
     }
 
-    .support-card:hover h3 {
+    .support-card:hover h3,
+    .support-card:focus h3,
+    .support-card:active h3 {
         color: #fff;
     }
 
-    .support-card:hover img {
+    .support-card:hover img,
+    .support-card:focus img,
+    .support-card:active img {
         filter: brightness(0) invert(1);
     }
 
@@ -531,22 +540,22 @@
         <!-- Support Section -->
         <section class="support-section">
             <div class="support-grid">
-                <div class="support-card">
+                <a href="tel:+18477373401" class="support-card">
                     <img src="{{ asset('assets/images/live-support/Vector.png') }}" alt="Phone Support" width="50" height="50">
                     <h3>Call Billing Support</h3>
-                </div>
-                <div class="support-card">
+                </a>
+                <a href="mailto:info@amdsol.com" class="support-card">
                     <img src="{{ asset('assets/images/live-support/live-chat-web-support 1.png') }}" alt="Live Chat" width="50" height="50">
                     <h3>Live Chat Assistance</h3>
-                </div>
-                <div class="support-card">
+                </a>
+                <a href="mailto:info@amdsol.com" class="support-card">
                     <img src="{{ asset('assets/images/live-support/email 1.png') }}" alt="Email Support" width="50" height="50">
                     <h3>Secure Email Support</h3>
-                </div>
-                <div class="support-card">
+                </a>
+                <a href="tel:+18477373401" class="support-card">
                     <img src="{{ asset('assets/images/live-support/support 1 (1).png') }}" alt="Help Desk" width="50" height="50">
                     <h3>Help Desk / Submit a Ticket</h3>
-                </div>
+                </a>
             </div>
         </section>
 

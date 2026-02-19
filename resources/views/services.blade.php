@@ -10,10 +10,10 @@
 <style>
 .hero-section {
   min-height: 600px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #fffff
   display: flex;
   align-items: center;
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
 .hero-container {
@@ -44,7 +44,7 @@
 }
 
 .hero-content p {
-  color: #666;
+  color: #000000;
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 30px;
@@ -128,14 +128,18 @@
 .book-now-btn:hover {
   background: #ffffff;
   color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 33, 71, 0.4);
+  
+  
   border: 1px solid #000000;
 }
 
 .about-section {
-  padding: 40px 0;
+  padding: 0px 0;
   background: #fff;
+}
+
+.section-divider-mobile {
+  display: none;
 }
 
 .about-container {
@@ -151,6 +155,7 @@
 .about-image img {
   width: 100%;
   height: 400px;
+border-radius:25px;
   object-fit: cover;
   object-position: top left;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -173,7 +178,12 @@
     line-height: 32px;
 }
 
+.learn-more-wrapper {
+  text-align: left;
+}
+
 .learn-more-btn {
+  display: inline-block;
   background: #002147;
   color: white;
   padding: 15px 30px;
@@ -183,6 +193,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .learn-more-btn:hover {
@@ -191,12 +202,17 @@
   transform: translateY(-2px);
   border: 1px solid #000000;
   box-shadow: 0 8px 20px rgba(0, 33, 71, 0.3);
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
   .hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .learn-more-wrapper {
+    text-align: center;
   }
   
   .hero-content h1 {
@@ -212,7 +228,19 @@
     gap: 40px;
   }
   
+  .about-section {
+    padding: 0;
+  }
+  
+  .section-divider-mobile {
+    display: none;
+  }
+  
   .about-image {
+    order: 1;
+  }
+  
+  .about-content {
     order: 2;
   }
   
@@ -239,7 +267,7 @@
 }
 
 .billing-process-container h2 {
-  padding: 40px 0 10px;
+  padding: 65px 0 10px;
   color: #002147;
   font-size: 32px;
   font-weight: 700;
@@ -622,19 +650,45 @@
     font-size: 28px;
   }
   
+  .carousel-track {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 10px 0;
+  }
+  
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  
   .carousel-slide {
+    display: grid !important;
     grid-template-columns: 1fr;
     gap: 20px;
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
+  
+  .carousel-slide.active {
+    display: grid !important;
   }
   
   .testimonial-card {
     padding: 30px 20px;
   }
   
+  /* Show only first card of each slide */
+  .carousel-slide .testimonial-card:nth-child(n+2) {
+    display: none;
+  }
+  
   .carousel-dots {
     display: flex !important;
     margin-top: 30px;
     gap: 10px;
+  }
   }
   
   .dot {
@@ -742,6 +796,7 @@
 
 <!-- About Section -->
 <section class="about-section">
+  <div class="section-divider-mobile"></div>
   <div class="about-container">
     <!-- Left Side - Image -->
     <div class="about-image">
@@ -758,7 +813,9 @@
         large hospital systems, we've helped thousands of healthcare providers streamline their operations 
         and focus on what matters most - patient care.
       </p>
-      <button class="learn-more-btn">Learn More About Us</button>
+      <div class="learn-more-wrapper">
+        <a href="{{ url('about-us') }}" class="learn-more-btn">Learn More About Us</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1094,6 +1151,35 @@ function showSlide(n) {
   }
   
   dots[currentSlideIndex-1].classList.add("active");
+}
+
+// Touch/Swipe functionality for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+const carouselTrack = document.querySelector('.carousel-track');
+
+if (carouselTrack) {
+  carouselTrack.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, false);
+
+  carouselTrack.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, false);
+}
+
+function handleSwipe() {
+  if (touchEndX < touchStartX - 50) {
+    // Swipe left - next slide
+    currentSlideIndex++;
+    showSlide(currentSlideIndex);
+  }
+  if (touchEndX > touchStartX + 50) {
+    // Swipe right - previous slide
+    currentSlideIndex--;
+    showSlide(currentSlideIndex);
+  }
 }
 
 // Auto slide

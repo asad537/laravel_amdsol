@@ -3,271 +3,192 @@
 @section('content')
 
     <style>
-         /* * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        } */
+       
+         .small-practices-wrapper {
+        font-family: 'Poppins', sans-serif;
+        background: #ffffff;
+        overflow-x: hidden;
+        width: 100%;
+    }
 
-        html {
-            scroll-behavior: smooth;
+    .small-practices-wrapper * {
+        box-sizing: border-box;
+    }
+
+    .small-practices-container {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
+        padding: 0;
+    }
+
+    /* Add proper spacing between sections */
+    .small-practices-wrapper section {
+        margin-bottom: 0px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .small-practices-wrapper section:last-child {
+        margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+        .small-practices-wrapper section {
+            margin-bottom: 30px;
         }
+        
+        .small-practices-wrapper section:last-child {
+            margin-bottom: 20px;
+        }
+    }
 
-        /* body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            background: #ffffff;
-        } */
+    .hero-section-small {
+        width: 100%;
+        max-width: 100%;
+        min-height: 350px;
+        background-color: #1a3a5c;
+        background-image: url('{{ asset('assets/images/outsource/hero.jpeg') }}');
+        background-size: cover;
+        background-position: center right;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        /* overflow: hidden; */
+        padding: 40px 20px;
+        margin: 0 0 40px 0;
+    }
 
-        /* .container {
-            max-width: 1440px;
-            width: 100%;
-            margin: 0 auto;
-            overflow: hidden;
-            padding: 0;
-        } */
+    @media (max-width: 1024px) {
+        .hero-section-small {
+            min-height: 380px;
+            padding: 50px 20px;
+            margin-bottom: 80px;
+        }
+    }
 
-        /* Add proper spacing between sections */
-        section {
+    @media (max-width: 768px) {
+        /* Hero Mobile Updates */
+        .hero-section-small {
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
             margin-bottom: 40px;
         }
 
-        section:last-child {
-            margin-bottom: 30px;
+        .hero-section-small::before {
+            display: none;
         }
 
-        @media (max-width: 768px) {
-            section {
-                margin-bottom: 30px;
-            }
-            
-            section:last-child {
-                margin-bottom: 20px;
-            }
-        }
-
-        /* Responsive Typography */
-        html {
-            font-size: 16px;
-        }
-
-        @media (max-width: 1200px) {
-            html {
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            html {
-                font-size: 14px;
-            }
-        }
-
-        .hero-section {
+        .hero-content-small {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
             width: 100%;
             max-width: 100%;
-            min-height: 280px;
-            background-color: #1a3a5c;
-            background-image: url("{{ asset('assets/images/outsource/hero.jpeg') }}");
-            background-size: cover;
-            background-position: center right;
-            background-repeat: no-repeat;
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            padding: 30px 0px;
-            margin: 0 0 30px 0;
         }
 
-        @media (max-width: 1024px) {
-            .hero-section {
-                min-height: 380px;
-                background-size: cover;
-                background-position: center right;
-                padding: 50px 0px;
-                margin-bottom: 80px;
-            }
+        .hero-section-small h1 {
+            font-size: 28px;
+            text-align: center;
+            max-width: 100%;
         }
 
-        @media (max-width: 768px) {
-            /* Hero Mobile Updates */
-            .hero-section {
-                min-height: auto;
-                padding: 0 0 30px 0;
-                background-image: none !important;
-                flex-direction: column;
-                background-color: #002147;
-                margin-bottom: 40px;
-            }
-
-            .hero-section::before {
-                display: none;
-            }
-
-            .hero-content {
-                padding-left: 20px;
-                padding-right: 20px;
-                text-align: center;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .hero-section h1 {
-                font-size: 28px;
-                text-align: center;
-                max-width: 100%;
-                margin-bottom: 15px;
-            }
-
-            .hero-section p {
-                text-align: center;
-                max-width: 100%;
-                font-size: 16px;
-            }
-
-            .mobile-hero-img {
-                display: block !important;
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-                margin-bottom: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-section {
-                min-height: 320px;
-                padding: 30px 0px;
-                background-position: 70% center;
-                background-size: cover;
-            }
-            
-            .hero-section::before {
-                background: linear-gradient(to right, 
-                    rgba(10, 25, 45, 0.98) 0%, 
-                    rgba(10, 25, 45, 0.9) 70%,
-                    rgba(10, 25, 45, 0.5) 100%);
-            }
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right,
-                    rgba(10, 25, 45, 1) 0%,
-                    rgba(10, 25, 45, 0.98) 20%,
-                    rgba(10, 25, 45, 0.92) 35%,
-                    rgba(10, 25, 45, 0.80) 50%,
-                    rgba(10, 25, 45, 0.55) 65%,
-                    rgba(10, 25, 45, 0.25) 80%,
-                    transparent 90%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding-left: 80px;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-text-wrapper {
-            max-width: 600px;
-        }
-
-
-        .hero-section h1 {
-            width: 100%;
-            font-size: 34px;
-            font-weight: 700;
-            color: white;
-            line-height: 1.2;
-            margin-bottom: 12px;
-        }
-
-        .hero-section p {
+        .hero-section-small p {
+            text-align: center;
+            max-width: 100%;
             font-size: 16px;
-            font-weight: 400;
-            color: white;
-            line-height: 1.4;
         }
 
-        @media (max-width: 1024px) {
-            .hero-content {
-                padding-left: 40px;
-                max-width: 500px;
-            }
-
-            .hero-section h1 {
-                font-size: 36px;
-            }
-
-            .hero-section p {
-                font-size: 16px;
-            }
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
+    }
 
-        @media (max-width: 768px) {
-            .hero-content {
-                padding-left: 20px;
-                padding-right: 20px;
-                max-width: 100%;
-            }
+    .hero-section-small::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right,
+                rgba(10, 25, 45, 1) 0%,
+                rgba(10, 25, 45, 0.98) 20%,
+                rgba(10, 25, 45, 0.92) 35%,
+                rgba(10, 25, 45, 0.80) 50%,
+                rgba(10, 25, 45, 0.55) 65%,
+                rgba(10, 25, 45, 0.25) 80%,
+                transparent 90%);
+        z-index: 1;
+    }
 
-            .hero-section h1 {
-                font-size: 28px;
-                margin-bottom: 15px;
-            }
+    .hero-content-small {
+        position: relative;
+        z-index: 2;
+        padding-left: 80px;
+        max-width: 600px;
+    }
 
-            .hero-section p {
-                font-size: 16px;
-            }
+    .hero-section-small h1 {
+        width: 100%;
+        font-size: 34px;
+        font-weight: 700;
+        color: white !important;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        border: none;
+    }
+
+    .hero-section-small p {
+        font-size: 18px;
+        font-weight: 400;
+        color: white;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        .hero-content-small {
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 100%;
         }
-
-        @media (max-width: 480px) {
-            .hero-content {
-                padding-left: 15px;
-                padding-right: 15px;
-                max-width: 100%;
-            }
-
-            .hero-section h1 {
-                font-size: 24px;
-                margin-bottom: 12px;
-            }
-
-            .hero-section p {
-                font-size: 14px;
-            }
+        .hero-section-small h1 {
+            font-size: 28px;
         }
+    }
             
         .medical-billing-section {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 40px;
+            padding: 60px 40px;
         }
 
         .billing-content-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            align-items: start;
+            align-items: stretch;
         }
 
         .left-content {
             padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .left-content h1 {
             color: #000000;
-            font-size: 34px;
+            font-size: 2rem;
             line-height: 1.2;
             margin-bottom: 15px;
             font-weight: 700;
@@ -275,14 +196,14 @@
 
         .left-content p {
             color: #000000;
-            font-size: 1em;
+            font-size: 1.5rem;
             line-height: 1.5;
             margin-bottom: 15px;
         }
 
         .strategies-text {
             color: #000000;
-            font-size: 1em;
+            font-size: 1.5 rem;
             line-height: 1.5;
             margin-bottom: 12px;
             font-weight: 500;
@@ -297,7 +218,7 @@
             display: flex;
             align-items: center;
             color: #000000;
-            font-size: 1em;
+            font-size: 1.5rem;
             margin-bottom: 10px;
             font-weight: 500;
         }
@@ -314,7 +235,7 @@
             border-radius: 4px;
             margin-right: 15px;
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 14px;
             flex-shrink: 0;
         }
 
@@ -343,7 +264,8 @@
             border-radius: 20px;
             width: 100%;
             max-width: 550px;
-            height: 320px;
+            height: 100%;
+            min-height: 400px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             margin: 0 auto;
@@ -383,7 +305,7 @@
             .left-content p,
             .strategies-text,
             .checklist li {
-                font-size: 1em;
+                font-size: 1.4rem;
             }
 
             .cta-button {
@@ -403,15 +325,15 @@
         }
 
         .comparison-section {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 40px;
+            padding: 60px 40px;
         }
 
         .section-title {
             text-align: center;
             color: #002147;
-            font-size: 34px;
+            font-size: 2rem;
             margin-bottom: 20px;
             font-weight: 700;
             line-height: 1.2;
@@ -437,7 +359,7 @@
         .comparison-table thead th {
             padding: 18px 25px;
             text-align: left;
-            font-size: 1.05em;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #002147;
             border-bottom: 2px solid #e2e8f0;
@@ -488,7 +410,7 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            font-size: 1em;
+            font-size: 1.5rem;
             color: #2d3748;
             font-weight: 600;
         }
@@ -545,8 +467,8 @@
             display: flex;
             align-items: flex-start;
             gap: 8px;
-            color: #4a5568;
-            font-size: 0.9em;
+            color: #000000;
+            font-size: 1.5rem;
             line-height: 1.5;
         }
 
@@ -554,7 +476,7 @@
             content: '•';
             color: #4a5568;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.5rem;
             line-height: 1.4;
         }
 
@@ -633,15 +555,15 @@
             }
 
             .comparison-card-header {
-                font-size: 1.05em;
+                font-size: 1.3rem;
             }
 
             .main-point {
-                font-size: 0.95em;
+                font-size: 1.4rem;
             }
 
             .sub-points li {
-                font-size: 0.9em;
+                font-size: 1.3rem;
             }
         }
 
@@ -656,9 +578,9 @@
         }
 
         .outsourcing-benefits-section {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 40px;
+            padding: 60px 40px;
             background: #f8f9fa;
         }
 
@@ -669,7 +591,7 @@
 
         .section-header h2 {
             color: #000000;
-            font-size: 34px;
+            font-size: 2rem;
             line-height: 1.3;
             margin-bottom: 20px;
             font-weight: 700;
@@ -693,12 +615,19 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             margin-top: 40px;
-            align-items: start;
+            align-items: stretch;
+        }
+
+        .content-grid .left-content {
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .left-content h3 {
             color: #002147;
-            font-size: 34px;
+            font-size: 2rem;
             margin-bottom: 20px;
             font-weight: 700;
             line-height: 1.3;
@@ -706,21 +635,23 @@
 
         .subtitle {
             color: #4a5568;
-            font-size: 1.05em;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             line-height: 1.6;
         }
 
         .benefits-checklist {
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         .benefits-checklist li {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             color: #002147;
-            font-size: 1.02em;
+            font-size: 1.5rem;
             line-height: 1.6;
         }
 
@@ -744,13 +675,14 @@
         .right-content {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
+            justify-content: flex-start;
         }
 
         .progress-item {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .progress-header {
@@ -761,7 +693,7 @@
 
         .progress-label {
             color: #000000;
-            font-size: 1.05em;
+            font-size: 1.5rem;
             font-weight: 600;
         }
 
@@ -817,11 +749,11 @@
             }
 
             .section-header h2 {
-                font-size: 1.7em;
+                font-size: 1.5rem;
             }
 
             .section-description {
-                font-size: 1em;
+                font-size: 1.4rem;
             }
 
             .left-content h3 {
@@ -829,11 +761,11 @@
             }
 
             .benefits-checklist li {
-                font-size: 0.98em;
+                font-size: 1.4rem;
             }
 
             .progress-label {
-                font-size: 1em;
+                font-size: 1.4em;
             }
 
             .progress-percentage {
@@ -856,7 +788,7 @@
             }
 
             .benefits-checklist li {
-                font-size: 0.95em;
+                font-size: 1.4rem;
                 margin-bottom: 20px;
             }
 
@@ -868,9 +800,9 @@
         .healthcare-section {
             display: flex;
             align-items: start;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 40px;
+            padding: 60px 40px;
             gap: 40px;
         }
 
@@ -878,11 +810,13 @@
             flex: 1;
             min-width: 300px;
             max-height: 350px;
+            overflow: hidden;
         }
 
         .image-container img {
-            width: 80%;
-            height: 100%;
+            width: 100%;
+            max-width: 550px;
+            height: auto;
             max-height: 350px;
             object-fit: cover;
             border-radius: 12px;
@@ -895,14 +829,14 @@
         }
 
         .content-container h2 {
-            font-size: 34px;
+            font-size: 2rem;
             color: #002147;
             margin-bottom: 12px;
             line-height: 1.2;
         }
 
         .content-container p {
-            font-size: 1rem;
+            font-size: 1.5rem;
             color: #000000;
             margin-bottom: 10px;
             line-height: 1.5;
@@ -911,8 +845,21 @@
         @media (max-width: 968px) {
             .healthcare-section {
                 flex-direction: column;
-                padding: 60px 30px;
+                padding: 60px 15px;
                 gap: 40px;
+            }
+
+            .image-container {
+                max-height: none;
+                min-width: 100%;
+                width: 100%;
+            }
+
+            .image-container img {
+                max-width: 100%;
+                width: 100%;
+                max-height: none;
+                height: auto;
             }
 
             .content-container h2 {
@@ -926,7 +873,7 @@
 
         @media (max-width: 480px) {
             .healthcare-section {
-                padding: 40px 20px;
+                padding: 40px 15px;
             }
 
             .content-container h2 {
@@ -940,9 +887,9 @@
         }
 
         .billing-solutions-section {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 40px;
+            padding: 60px 40px;
             background: #f8f9fa;
         }
 
@@ -952,8 +899,8 @@
         }
 
         .billing-solutions-section .section-header h2 {
-            font-size: 30px;
-            color: #2c3e50;
+            font-size: 2rem;
+            color: #000000;
             margin-bottom: 15px;
             line-height: 1.3;
         }
@@ -964,8 +911,8 @@
         }
 
         .billing-solutions-section .section-header p {
-            font-size: 1.15rem;
-            color: #666;
+            font-size: 1.5rem;
+            color: #000000;
             max-width: 700px;
             margin: 0 auto;
         }
@@ -1076,14 +1023,14 @@
         }
 
         .service-card h3 {
-            font-size: 1.25rem;
+            font-size: 2rem;
             color: #002147;
             margin-bottom: 10px;
             font-weight: 600;
         }
 
         .service-card p {
-            font-size: 0.95rem;
+            font-size: 1.5rem;
             color: #666;
             line-height: 1.6;
         }
@@ -1132,21 +1079,21 @@
         }
 
         .cta-pricing-section {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px 30px 40px;
+            padding: 0 40px;
         }
 
         .cta-container {
             background: linear-gradient(135deg, #001a33 0%, #002d5a 100%);
             border-radius: 40px;
-            padding: 35px 40px;
+            padding: 60px 40px;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
             overflow: hidden;
-            min-height: 200px;
+            min-height: 280px;
         }
 
         .cta-container::before {
@@ -1271,11 +1218,16 @@
             }
         }
     </style>
-        <section class="hero-section">
-            <img src="{{ asset('assets/images/outsource/hero.jpeg') }}" alt="Outsource Medical Billing" class="mobile-hero-img" style="display: none;">
-            <div class="hero-content">
+       <div class="small-practices-wrapper">
+    <div class="small-practices-container">
+        <!-- Hero Section -->
+        <section class="hero-section-small">
+            <img src="{{ asset('assets/images/outsource/hero.jpeg') }}" alt="Small Practices" class="mobile-hero-img" style="display: none;">
+            <div class="hero-content-small">
                 <h1>Medical Billing Outsourcing Made Simple</h1>
-                <p>Experience thorough compliance, robust technology, and faster reimbursements.</p>
+                <p>Experience thorough compliance, robust technology, and faster reimbursements.
+
+</p>
             </div>
         </section>
 
@@ -1738,4 +1690,7 @@
             'buttonText' => 'Get Free Consultation',
             'buttonLink' => url('contact-us.php')
         ])
+        
+        </div>
+
 @endsection

@@ -8,9 +8,9 @@
     <meta name="google-site-verification" content="b4ou-sLla8wDu3s7-gAB9K_J5Hhlta_vKlWr5mFLZqo" />
     <meta name="ROBOTS" CONTENT="INDEX,FOLLOW">
     <script>
-        // Prevent browser from restoring scroll position on back/forward
+        // Allow browser to restore scroll position on reload/back/forward
         if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
+            history.scrollRestoration = 'auto';
         }
     </script>
     
@@ -50,11 +50,11 @@
                 <ul class="d-flex header-w3_pvt">
                     <li class="mr-4 text-white">
                         <span class="fa fa-envelope-open mr-2"></span>
-                        <a href="mailto:{{ $site->email ?? '' }}" class="text-white">{{ $site->email ?? '' }}</a>
+                        <a href="mailto:info@amdsol.com" class="text-white">info@amdsol.com</a>
                     </li>
                     <li class="text-white">
                         <span class="fa fa-phone mr-2"></span>
-                        Call Us {{ $site->phone ?? '' }}
+                        Call Us +1 (847) 737-3401
                     </li>
                 </ul>
             </div>

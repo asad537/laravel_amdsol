@@ -669,7 +669,7 @@
                     </div>
                     <div class="radiology-benefit-card">
                         <div class="radiology-icon-wrapper">
-                            <img src="{{ asset('assets/images/radiology/radiology-img/Vector (14).png') }}" alt="Lower Denials" class="radiology-benefit-image">
+                            <img src="{{ asset('assets/images/radiology/radiology-img/Vector (12).png') }}" alt="Lower Denials" class="radiology-benefit-image">
                         </div>
                         <h3 class="radiology-benefit-title">Lower Denial Rates</h3>
                         <p class="radiology-benefit-description">Proactive follow-ups and denial management to protect revenue.</p>

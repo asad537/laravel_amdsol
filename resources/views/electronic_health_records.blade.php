@@ -22,7 +22,17 @@
     }
 
     .ehr-wrapper h1, .ehr-wrapper h2, .ehr-wrapper h3 {
-        color: #fff;
+        color: #000000;
+    }
+
+    /* Override for dark background sections */
+    .ehr-billing-feature-card h1,
+    .ehr-billing-feature-card h2,
+    .ehr-billing-feature-card h3,
+    .hero-section h1,
+    .hero-section h2,
+    .hero-section h3 {
+        color: #ffffff !important;
     }
 
     .hero-section {
@@ -226,8 +236,12 @@
             gap: 40px;
         }
 
+        .content-section-image-box {
+            order: 1; /* Image comes first on mobile */
+        }
+
         .content-section-text-box {
-            order: 1; /* Text comes first on mobile */
+            order: 2; /* Text comes second on mobile */
         }
 
         .content-section-image-box {

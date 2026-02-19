@@ -87,7 +87,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 40px 20px;
+        padding: 20px 20px;
     }
 
     .healthcare-services-container, .medical-services-container {
@@ -139,7 +139,7 @@
     }
 
     .healthcare-main-heading, .medical-main-heading {
-        font-size: 34px;
+        font-size: 33px;
         font-weight: 700;
         color: #002147;
         line-height: 1.2;
@@ -480,7 +480,7 @@
         }
 
         .hero-section h1 {
-            font-size: 28px;
+            font-size: 24px;
             text-align: center;
             max-width: 100%;
         }
@@ -488,7 +488,7 @@
         .hero-section p {
             text-align: center;
             max-width: 100%;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .mobile-hero-img {
@@ -497,6 +497,46 @@
             height: auto;
             object-fit: cover;
             margin-bottom: 20px;
+        }
+
+        .healthcare-services-wrapper, .medical-services-wrapper {
+            padding: 10px 20px;
+        }
+
+        .healthcare-text-section, .medical-text-section {
+            padding: 30px 20px;
+        }
+
+        .healthcare-main-heading, .medical-main-heading {
+            font-size: 24px;
+        }
+
+        .healthcare-description-text, .medical-description-text {
+            font-size: 14px;
+        }
+
+        .patient-process-wrapper {
+            padding: 30px 20px;
+        }
+
+        .patient-process-header {
+            margin-bottom: 25px;
+        }
+
+        .testimonials-section {
+            padding: 30px 20px;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+        }
+
+        .section-header p {
+            font-size: 13px;
+        }
+
+        .cta-container {
+            padding: 30px 20px;
         }
 
         .patient-process-steps-grid { gap: 20px; }
@@ -579,6 +619,50 @@
     @media (max-width: 480px) {
         .hero-section {
             background-position: center center;
+        }
+
+        .hero-section h1 {
+            font-size: 20px;
+        }
+
+        .hero-section p {
+            font-size: 13px;
+        }
+
+        .healthcare-services-wrapper, .medical-services-wrapper {
+            padding: 10px 15px;
+        }
+
+        .healthcare-text-section, .medical-text-section {
+            padding: 25px 15px;
+        }
+
+        .healthcare-main-heading, .medical-main-heading {
+            font-size: 20px;
+        }
+
+        .healthcare-description-text, .medical-description-text {
+            font-size: 13px;
+        }
+
+        .patient-process-wrapper {
+            padding: 25px 15px;
+        }
+
+        .patient-process-header {
+            margin-bottom: 20px;
+        }
+
+        .testimonials-section {
+            padding: 25px 15px;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+        }
+
+        .section-header p {
+            font-size: 12px;
         }
         
         .cta-pricing-section {
