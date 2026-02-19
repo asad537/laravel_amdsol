@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <img src="{{ asset('images/logo_white.png') }}" class="mb-4" style="max-height: 60px;">
+                <a href="{{ url('/') }}">
+                    <img src="{{ asset('images/logo_white.png') }}" class="mb-4" style="max-height: 60px; cursor: pointer;">
+                </a>
                 <p>AMDSol is a premier medical billing organization dedicated to streamlining healthcare provider operations through innovative RCM solutions and expert support.</p>
                 <div class="icon-social mt-4">
                     <a href="{{ $site->facebook ?? '#' }}"><span class="fa fa-facebook"></span></a>
@@ -30,9 +32,18 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4>Stay Connected</h4>
-                <p><span class="fa fa-map-marker mr-2"></span> {{ $site->address ?? '' }}</p>
-                <p><span class="fa fa-phone mr-2"></span> {{ $site->phone ?? '' }}</p>
-                <p><span class="fa fa-envelope mr-2"></span> {{ $site->email ?? '' }}</p>
+                <p>
+                    <span class="fa fa-map-marker mr-2"></span> 
+                    <a href="{{ url('contact-us.php') }}#map-section" style="color: inherit; text-decoration: none;">{{ $site->address ?? '9933 Franklin Ave Suite 103, Franklin Park, IL 60131' }}</a>
+                </p>
+                <p>
+                    <span class="fa fa-phone mr-2"></span> 
+                    <a href="tel:{{ str_replace([' ', '(', ')', '-'], '', $site->phone ?? '+18477373401') }}" style="color: inherit; text-decoration: none;">{{ $site->phone ?? '+1 (847) 737-3401' }}</a>
+                </p>
+                <p>
+                    <span class="fa fa-envelope mr-2"></span> 
+                    <a href="mailto:{{ $site->email ?? 'info@amdsol.com' }}" style="color: inherit; text-decoration: none;">{{ $site->email ?? 'info@amdsol.com' }}</a>
+                </p>
             </div>
         </div>
         <div class="footer-bottom">

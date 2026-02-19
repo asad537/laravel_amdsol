@@ -439,7 +439,7 @@
     </section>
 
     <!-- Contact Get in Touch Section -->
-    <section class="contact-touch-section">
+    <section class="contact-touch-section" id="map-section">
         <div class="contact-container">
             <div class="contact-touch-container">
                 <div class="contact-touch-left">

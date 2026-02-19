@@ -50,7 +50,7 @@
                 <ul class="d-flex header-w3_pvt">
                     <li class="mr-4 text-white">
                         <span class="fa fa-envelope-open mr-2"></span>
-                        <a href="mailto:info@amdsol.com" class="text-white">info@amdsol.com</a>
+                        <a href="mailto:info@amdsol.com" class="text-white" style="text-transform: none;">info@amdsol.com</a>
                     </li>
                     <li class="text-white">
                         <span class="fa fa-phone mr-2"></span>
@@ -64,8 +64,8 @@
                     <a href="{{ $site->twitter ?? '#' }}" class="text-white mx-2"><span class="fa fa-twitter"></span></a>
                     <a href="{{ $site->linkedin ?? '#' }}" class="text-white mx-2"><span class="fa fa-linkedin"></span></a>
                 </div>
+                </div>
             </div>
-        </div>
     </div>
 </div>
 
@@ -261,11 +261,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 @include('layouts.footer')
 
-<div class="move-top text-right">
-    <a href="#home" class="move-top"> 
+<div class="move-top text-right" id="scrollToTop">
+    <a href="#" class="move-top scroll-to-top"> 
         <span class="fa fa-angle-up mb-3" aria-hidden="true"></span>
     </a>
 </div>
+
+<script>
+// Scroll to top functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    const scrollToTopLink = document.querySelector('.scroll-to-top');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.style.display = 'block';
+            scrollToTopBtn.style.opacity = '1';
+        } else {
+            scrollToTopBtn.style.opacity = '0';
+            setTimeout(function() {
+                if (window.pageYOffset <= 300) {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            }, 300);
+        }
+    });
+    
+    // Smooth scroll to top when clicked
+    if (scrollToTopLink) {
+        scrollToTopLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Initially hide the button
+    scrollToTopBtn.style.display = 'none';
+});
+</script>
 
 @yield('scripts')
 </body>

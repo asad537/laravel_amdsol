@@ -281,7 +281,7 @@
                         <li><i class="fa fa-check-circle"></i> Seamless integration with leading EHR/EMR platforms.</li>
                     </ul>
                     <div class="book-demo-wrapper d-none d-lg-block">
-                        <a href="{{ url('contact-us.php') }}" class="book-demo-badge">Book a Demo</a>
+                        <a href="{{ url('contact-us.php') }}" class="book-demo-badge">Book A Demo</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
