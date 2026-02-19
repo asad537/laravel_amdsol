@@ -1,6 +1,22 @@
 @extends('layouts.app')
 @section('content')
 <style>
+    .case-studies-page-wrapper {
+        font-family: 'Poppins', sans-serif;
+        background: #ffffff;
+    }
+
+    .case-studies-page-wrapper * {
+        box-sizing: border-box;
+    }
+
+    .case-studies-page-container {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0;
+    }
 
     .hero-section {
         width: 100%;
@@ -439,7 +455,10 @@ background: white;
     }
 }
 </style>
-<section class="hero-section">
+
+<div class="case-studies-page-wrapper">
+    <div class="case-studies-page-container">
+        <section class="hero-section">
     <img src="{{ asset('assets/images/case-studies/case_study.jpeg') }}" alt="Hero Image" class="mobile-hero-img">
     <div class="hero-content">
         <h1>Case Studies</h1>
@@ -536,4 +555,8 @@ background: white;
         </div>
     </div>
 </section>
+
+    </div>
+</div>
+
 @endsection

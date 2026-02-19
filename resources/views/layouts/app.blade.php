@@ -7,6 +7,11 @@
     <meta name="keywords" content="@yield('meta_keywords', $site->meta_keywords ?? $site->default_meta_keywords)">
     <meta name="google-site-verification" content="b4ou-sLla8wDu3s7-gAB9K_J5Hhlta_vKlWr5mFLZqo" />
     <meta name="ROBOTS" CONTENT="INDEX,FOLLOW">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    
     <script>
         // Allow browser to restore scroll position on reload/back/forward
         if (history.scrollRestoration) {
