@@ -4772,7 +4772,11 @@ header .container {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 33, 71, 0.2);
 }
-
+.specialties-cta-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 33, 71, 0.2);
+}
 @media (max-width: 991px) {
     .ehr-grid {
         grid-template-columns: repeat(2, 1fr);
