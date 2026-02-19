@@ -50,11 +50,11 @@
                 <ul class="d-flex header-w3_pvt">
                     <li class="mr-4 text-white">
                         <span class="fa fa-envelope-open mr-2"></span>
-                        <a href="mailto:info@amdsol.com" class="text-white" style="text-transform: none;">info@amdsol.com</a>
+                        <a href="mailto:Info@AMDSOL.COM" class="text-white" style="text-transform: none;">Info@amdsol.com</a>
                     </li>
                     <li class="text-white">
                         <span class="fa fa-phone mr-2"></span>
-                        Call Us +1 (847) 737-3401
+                        <a href="tel:+18477373401" class="text-white" style="text-decoration: none;">Call Us +1 (847) 737-3401</a>
                     </li>
                 </ul>
             </div>

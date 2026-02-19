@@ -2,37 +2,25 @@
 
 @section('content')
 <style>
- * {
-            margin: 0;
-            padding: 0;
+        .cardiology-page-wrapper {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+        }
+
+        .cardiology-page-wrapper * {
             box-sizing: border-box;
+        }
+
+        .cardiology-page-container {
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0;
         }
 
         html {
             scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1440px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
-        
-        /* Footer should be full width */
-        footer .container,
-        .footer-bell .container {
-            max-width: 100% !important;
-            padding: 0 !important;
-        }
-        
-        header .container {
-            overflow: visible !important;
         }
 
         /* Responsive Typography */
@@ -1361,7 +1349,8 @@
 
     </style>
     
-     <div class="container">
+<div class="cardiology-page-wrapper">
+    <div class="cardiology-page-container">
         <section class="hero-section">
             <img src="{{ asset('assets/images/cardiology/cardiology.jpg') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content">
@@ -1775,5 +1764,8 @@ up on unpaid claims months later, ensuring timely and accurate reimbursements.
     'buttonText' => 'Explore Solutions',
     'buttonLink' => url('contact-us.php')
 ])
+
+    </div>
+</div>
 
 @endsection

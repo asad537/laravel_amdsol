@@ -160,16 +160,37 @@
     .hospital-image-container {
         flex: 1;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
+        padding-top: 0;
     }
 
     .hospital-image-container img {
         width: 100%;
-        max-width: 400px;
+        max-width: 450px;
         height: auto;
+        min-height: 400px;
+        object-fit: cover;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .hospital-image-container {
+            align-items: center;
+        }
+        .hospital-image-container img {
+            max-width: 100%;
+            min-height: 280px;
+            object-fit: cover;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hospital-image-container img {
+            min-height: 250px;
+            border-radius: 15px;
+        }
     }
 
     .hospital-text-content {

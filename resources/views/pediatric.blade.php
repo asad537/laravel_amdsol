@@ -183,6 +183,32 @@
         .healthcare-text-section {
             padding: 40px 20px;
         }
+        .healthcare-image-container {
+            padding: 20px;
+        }
+        .healthcare-doctor-image {
+            max-width: 100%;
+            min-height: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .healthcare-image-container {
+            padding: 15px;
+        }
+        .healthcare-doctor-image {
+            min-height: 280px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .healthcare-image-container {
+            padding: 10px;
+        }
+        .healthcare-doctor-image {
+            min-height: 250px;
+            border-radius: 15px;
+        }
     }
 
     .pediatric-benefits-section {
