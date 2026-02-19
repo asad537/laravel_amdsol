@@ -271,13 +271,23 @@
     <div class="container">
         <div class="indigo-box">
             <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-1 order-1">
-                    <h2 class="expertise-heading">Transforming Your Practice <br class="d-none d-lg-block">Through Technical Expertise</h2>
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <h2 class="expertise-heading d-none d-lg-block">Transforming Your Practice <br>Through Technical Expertise</h2>
+                    <h2 class="expertise-heading d-lg-none">Transforming Your Practice Through Technical Expertise</h2>
+                    <ul class="expertise-list d-none d-lg-block">
+                        <li><i class="fa fa-check-circle"></i> 24/7 Live Patient Support for all 32+ specialties.</li>
+                        <li><i class="fa fa-check-circle"></i> Dedicated Account Managers for personalized attention.</li>
+                        <li><i class="fa fa-check-circle"></i> Real-time analytics and financial reporting dashbaords.</li>
+                        <li><i class="fa fa-check-circle"></i> Seamless integration with leading EHR/EMR platforms.</li>
+                    </ul>
+                    <div class="book-demo-wrapper d-none d-lg-block">
+                        <a href="{{ url('contact-us.php') }}" class="book-demo-badge">Book a Demo</a>
+                    </div>
                 </div>
-                <div class="col-lg-6 order-lg-2 order-2">
+                <div class="col-lg-6 order-1 order-lg-2">
                     <img src="{{ asset('images/banners/expertise-new.png') }}" alt="Medical Expertise" class="img-fluid expertise-image">
                 </div>
-                <div class="col-lg-6 order-lg-1 order-3">
+                <div class="col-12 order-3 d-lg-none">
                     <ul class="expertise-list">
                         <li><i class="fa fa-check-circle"></i> 24/7 Live Patient Support for all 32+ specialties.</li>
                         <li><i class="fa fa-check-circle"></i> Dedicated Account Managers for personalized attention.</li>
