@@ -159,8 +159,7 @@ class HomeController extends Controller
     protected function view_static_page(Request $request, $page_data)
     {
         if ($request->isMethod('post')) {
-            $this->submit_registration_form($request->all());
-            return redirect('thank-you');
+            return redirect()->route('thank-you');
         }
 
         $data['data'] = $page_data;
@@ -203,7 +202,7 @@ class HomeController extends Controller
         
         if ($request->isMethod('post')) {
             $this->submit_registration_form($request->all());
-            return redirect('thank-you');
+            return redirect()->route('thank-you');
         }
 
         $data['data'] = $service;
@@ -375,7 +374,7 @@ class HomeController extends Controller
             // Implement contact form logic here
             // In CI it was: submit_contact_form($form);
             $this->submit_contact_form($request->all());
-            return redirect('thank-you');
+            return redirect()->route('thank-you');
         }
 
         $data["meta_title"] = "Contact Us | AMD SOL";
@@ -390,7 +389,7 @@ class HomeController extends Controller
     {
         if ($request->isMethod('post')) {
             $this->submit_demo_form($request->all());
-            return redirect('thank-you');
+            return redirect()->route('thank-you');
         }
 
         $data["meta_title"] = "Request a Demo | AMD SOL";

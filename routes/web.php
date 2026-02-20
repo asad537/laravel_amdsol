@@ -50,8 +50,8 @@ Route::get('privacy-policy', function () {
 });
 
 // Thank You Page
-Route::get('thank-you', [HomeController::class, 'thankYou']);
-Route::get('public/thank-you', [HomeController::class, 'thankYou']);
+Route::get('thank-you', [HomeController::class, 'thankYou'])->name('thank-you');
+Route::get('public/thank-you', [HomeController::class, 'thankYou'])->name('public.thank-you');
 
 
 // Auth routes
