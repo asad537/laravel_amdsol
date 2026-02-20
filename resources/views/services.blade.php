@@ -201,7 +201,7 @@ border-radius:25px;
 .learn-more-btn {
   display: inline-block;
   background: #002147;
-  color: white;
+  color: white !important;
   padding: 15px 30px;
   border: none;
   border-radius: 8px;
@@ -218,11 +218,18 @@ border-radius:25px;
 
 .learn-more-btn:hover {
   background: #ffffff;
-  color: #000000;
+  color: #000000 !important;
   
   border: 1px solid #000000;
   box-shadow: 0 8px 20px rgba(0, 33, 71, 0.3);
   text-decoration: none;
+}
+
+.learn-more-btn:active {
+  background: #002147 !important;
+  color: white !important;
+  border: none;
+  transform: translateY(0px);
 }
 
 .about-content {
@@ -582,11 +589,15 @@ border-radius:25px;
 
 .testimonial-card {
   background: #fff;
-  padding: 40px 30px;
+  padding: 25px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   text-align: center;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .testimonial-card:hover {
@@ -595,26 +606,37 @@ border-radius:25px;
 }
 
 .testimonial-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: #002147;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 15px;
+  flex-shrink: 0;
 }
 
 .testimonial-icon svg {
   stroke: #fff;
+  width: 30px;
+  height: 30px;
 }
 
 .card-heading {
   color: #002147;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  margin-bottom: 15px;
+  line-height: 1.3;
+  min-height: 52px;
+  max-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
 }
 
 .card-list {
@@ -626,10 +648,10 @@ border-radius:25px;
 
 .card-list li {
   color: #666;
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 12px;
-  padding-left: 25px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  padding-left: 20px;
   position: relative;
 }
 
@@ -639,7 +661,7 @@ border-radius:25px;
   left: 0;
   color: #002147;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .carousel-dots {
@@ -1014,11 +1036,13 @@ border-radius:25px;
 </h1>
             <ul class="card-list">
               <li>Reporting on RVU to calculate the value of medical services</li>
-              <li>Clearing up hidden glitches for better revenue collection
-</li>
-              <li>Ensuring on-demand availability of latest billing reports
-</li>
+              <li>Clearing up hidden glitches for better revenue collection</li>
+              <li>Ensuring on-demand availability of latest billing reports</li>
               <li>Providing detailed billing reports</li>
+              <li>Tracking key performance indicators for practice growth</li>
+              <li>Analyzing claim submission patterns and success rates</li>
+              <li>Monitoring reimbursement trends across payers</li>
+              <li>Generating customized financial dashboards</li>
             </ul>
           </div>
 
@@ -1028,18 +1052,16 @@ border-radius:25px;
                 <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
               </svg>
             </div>
-            <h1 class="card-heading">Providing detailed billing reports</h1>
+            <h1 class="card-heading">Comprehensive Revenue Cycle Management</h1>
             <ul class="card-list">
-              <li>Dealing with payment posting for healthy cash flow
-</li>
-              <li>Doing charge entry for service payments
-</li>
-              <li>Reviewing denials with quick clear-ups
-</li>
-              <li>Creating specialty-specific SLA reports
-</li>
-              <li>Tracking accounts receivable aging
-</li>
+              <li>Dealing with payment posting for healthy cash flow</li>
+              <li>Doing charge entry for service payments</li>
+              <li>Reviewing denials with quick clear-ups</li>
+              <li>Creating specialty-specific SLA reports</li>
+              <li>Tracking accounts receivable aging</li>
+              <li>Managing patient statements and collections</li>
+              <li>Coordinating with insurance companies for faster payments</li>
+              <li>Optimizing billing workflows for maximum efficiency</li>
             </ul>
           </div>
 
@@ -1052,13 +1074,14 @@ border-radius:25px;
             <h1 class="card-heading">Revenue Leakage Fix
 </h1>
             <ul class="card-list">
-              <li>Identifying and resolving errors
-</li>
-              <li>Coding medical records
-</li>
-              <li>Insurance Verification</li>
-              <li>Benchmarking the coding
-</li>
+              <li>Identifying and resolving billing errors</li>
+              <li>Coding medical records accurately</li>
+              <li>Insurance verification and eligibility checks</li>
+              <li>Benchmarking the coding standards</li>
+              <li>Preventing undercoding and overcoding issues</li>
+              <li>Auditing claims before submission</li>
+              <li>Recovering lost revenue from past claims</li>
+              <li>Implementing preventive measures for future leakage</li>
             </ul>
           </div>
         </div>
@@ -1074,12 +1097,14 @@ border-radius:25px;
             <h1 class="card-heading">Best Billing Associates
 </h1>
             <ul class="card-list">
-              <li>Modern technology for fast claim processing
-</li>
-              <li>Medical billing with 24/7 physician support
-</li>
-              <li>Ensuring correct patient billing
-</li>
+              <li>Modern technology for fast claim processing</li>
+              <li>Medical billing with 24/7 physician support</li>
+              <li>Ensuring correct patient billing</li>
+              <li>Dedicated account managers for personalized service</li>
+              <li>Certified billing specialists with industry expertise</li>
+              <li>Regular training on latest billing regulations</li>
+              <li>Proactive communication and transparent reporting</li>
+              <li>Seamless integration with your practice management system</li>
             </ul>
           </div>
 
@@ -1092,13 +1117,14 @@ border-radius:25px;
             <h1 class="card-heading">Maximizing Clean Billing Claims %
 </h1>
             <ul class="card-list">
-              <li>Identifying trends and patterns in claims data
-</li>
+              <li>Identifying trends and patterns in claims data</li>
               <li>Tracking all aspects of the claims process</li>
-              <li>Using advanced data analysis tools
-</li>
+              <li>Using advanced data analysis tools</li>
               <li>Appealing on denied claims</li>
               <li>Keeping the provider in loop</li>
+              <li>Implementing quality assurance checks</li>
+              <li>Reducing claim rejection rates significantly</li>
+              <li>Accelerating payment cycles for better cash flow</li>
             </ul>
           </div>
 
@@ -1111,16 +1137,14 @@ border-radius:25px;
             <h1 class="card-heading">Specialty Specific Specialization
 </h1>
             <ul class="card-list">
-              <li>Staying updated on the latest changes in healthcare regulations
-</li>
-              <li>Offering tailor-made solutions to small and medium practices
-</li>
-              <li>Providing comprehensive services for improved bottom line
-</li>
-              <li>BResolving RCM-related challenges for every specialty
-</li>
-              <li>Supporting medical practitioners of all specialties
-</li>
+              <li>Staying updated on the latest changes in healthcare regulations</li>
+              <li>Offering tailor-made solutions to small and medium practices</li>
+              <li>Providing comprehensive services for improved bottom line</li>
+              <li>Resolving RCM-related challenges for every specialty</li>
+              <li>Supporting medical practitioners of all specialties</li>
+              <li>Understanding unique billing requirements per specialty</li>
+              <li>Expertise in specialty-specific coding and modifiers</li>
+              <li>Customized workflows for different practice types</li>
             </ul>
           </div>
         </div>
