@@ -574,13 +574,13 @@
 
     /* Specialties Grid */
     .billing-solutions-small {
-        padding: 20px 20px 40px 20px;
+        padding: 15px 20px 20px 20px;
         background-color: #ffffff;
         text-align: center;
         position: relative;
         z-index: 1;
         isolation: isolate;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
     }
 
     .billing-solutions-small h2 {
@@ -684,7 +684,7 @@
         background-color: #002147;
         color: white !important;
         border: none;
-        padding: 6px 35px;
+        padding: 10px 35px;
         font-size: 14px;
         font-weight: 600;
         border-radius: 15px;
@@ -1039,11 +1039,12 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 30px;">
+            <div style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
 
                 <a href="{{ url('/specialties#billing-solutions-section') }}" class="see-more-btn-small">See More</a>
             </div>
         </section>
+        
 
         @include('partials.cta-section', [
     'title' => 'Ready to Streamline Your Billing?',

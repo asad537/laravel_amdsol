@@ -887,13 +887,21 @@
         display: inline-block;
         transition: all 0.3s ease;
         border: 1px solid #001B35;
-        color: white;
+        color: white !important;
     }
 
     .ehr-explore-btn-custom:hover {
         background: #ffffff;
         border: 1px solid #000000;
-        color: black;
+        color: black !important;
+    }
+
+    .ehr-explore-btn-custom:active,
+    .ehr-explore-btn-custom:focus {
+        background: #001B35 !important;
+        border: 1px solid #001B35 !important;
+        color: white !important;
+        outline: none;
     }
 
     @media (max-width: 991px) {
