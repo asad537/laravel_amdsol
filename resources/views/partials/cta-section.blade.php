@@ -14,8 +14,8 @@
     /* Global CTA Section Styles */
     .global-cta-pricing-section {
         width: 80%;
-        margin: 36px auto;
-        padding-bottom: 20px;
+        margin: 36px auto 60px auto;
+        padding-bottom: 0px;
     }
 
     .global-cta-container {
@@ -98,7 +98,8 @@
     @media (max-width: 768px) {
         .global-cta-pricing-section {
             width: 90%;
-            padding-bottom: 40px;
+            margin: 36px auto 50px auto;
+            padding-bottom: 0px;
         }
         
         .global-cta-container { 
@@ -155,7 +156,8 @@
     @media (max-width: 480px) {
         .global-cta-pricing-section {
             width: 100%;
-            padding-bottom: 20px;
+            margin: 36px auto 40px auto;
+            padding-bottom: 0px;
         }
         
         .global-cta-container {

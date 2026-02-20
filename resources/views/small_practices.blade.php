@@ -718,87 +718,6 @@
         background-color: #002147;
         transform: translateY(1px);
     }
-
-    /* CTA Section */
-    .cta-container-small {
-        background: linear-gradient(135deg, #001a33 0%, #002d5a 100%);
-        border-radius: 40px;
-        padding: 40px 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        min-height: 280px;
-        margin: 0px auto;
-        max-width: 1200px;
-        z-index: 2;
-        isolation: isolate;
-    }
-
-    .cta-container-small::before {
-        content: '';
-        position: absolute;
-        top: -44px;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("{{ asset('assets/images/small/small-practices/wave.png') }}");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: right center;
-        opacity: 0.4;
-        z-index: 1;
-    }
-
-    .cta-content-small {
-        text-align: center;
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-    }
-
-    .cta-content-small h2 {
-        font-size: 40px;
-        font-weight: 700;
-        color: white !important;
-        margin-bottom: 12px;
-        line-height: 1.2;
-        border: none;
-    }
-
-    .cta-content-small p {
-        font-size: 20px;
-        color: #FFFFFF;
-        opacity: 0.9;
-        margin-bottom: 25px;
-    }
-
-    .cta-request-btn-small {
-        background-color: white;
-        color: #002147;
-        padding: 14px 45px;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 30px;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .cta-request-btn-small:hover {
-        background-color: #f8f8f8;
-        transform: translateY(-2px);
-    }
-
-    @media (max-width: 768px) {
-        .cta-container-small h2 {
-            font-size: 32px;
-        }
-        .cta-content-small p {
-            font-size: 16px;
-        }
-    }
 </style>
 
 <div class="small-practices-wrapper">
@@ -1040,11 +959,9 @@
             </div>
             
             <div style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
-
                 <a href="{{ url('/specialties#billing-solutions-section') }}" class="see-more-btn-small">See More</a>
             </div>
         </section>
-        
 
         @include('partials.cta-section', [
     'title' => 'Ready to Streamline Your Billing?',
