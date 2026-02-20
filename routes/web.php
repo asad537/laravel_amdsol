@@ -21,6 +21,8 @@ Route::get('contact-us', [HomeController::class, 'contact']);
 Route::post('contact-us', [HomeController::class, 'contact']);
 Route::get('contact-us.php', [HomeController::class, 'contact']);
 Route::post('contact-us.php', [HomeController::class, 'contact']);
+Route::post('public/contact-us.php', [HomeController::class, 'contact']);
+Route::post('public/contact-us', [HomeController::class, 'contact']);
 
 Route::get('case-studies', [HomeController::class, 'case_studies']);
 Route::get('case-study/{seokey}', [HomeController::class, 'case_study_detail']);
@@ -37,6 +39,7 @@ Route::get('radiology-billing-services', [HomeController::class, 'radiology']);
 Route::get('physician-billing-services', [HomeController::class, 'physician_billing']);
 Route::get('request-demo', [HomeController::class, 'demo']);
 Route::post('request-demo', [HomeController::class, 'demo']);
+Route::post('public/request-demo', [HomeController::class, 'demo']);
 
 // Testimonials
 Route::get('testimonials', [HomeController::class, 'testimonials']);
@@ -48,6 +51,7 @@ Route::get('privacy-policy', function () {
 
 // Thank You Page
 Route::get('thank-you', [HomeController::class, 'thankYou']);
+Route::get('public/thank-you', [HomeController::class, 'thankYou']);
 
 
 // Auth routes
