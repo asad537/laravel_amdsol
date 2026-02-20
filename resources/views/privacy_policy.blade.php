@@ -315,7 +315,7 @@
     <h2>Contact Us & Lodging a Complaint</h2>
     <p>If you have any questions about this Privacy Policy or wish to exercise your privacy rights, You can contact us:</p>
     <ul>
-        <li>By email: Support@Amdsol.Com</li>
+        <li>By email: info@amdsol.com</li>
         <li>By visiting our website's contact page</li>
     </ul>
     <p>If you are not satisfied with our response, you may have the right to lodge a complaint with the relevant supervisory authority in your jurisdiction. For users in the United States, this may include your state's Attorney General or the Federal Trade Commission.</p>
