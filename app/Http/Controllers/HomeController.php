@@ -159,6 +159,7 @@ class HomeController extends Controller
     protected function view_static_page(Request $request, $page_data)
     {
         if ($request->isMethod('post')) {
+            $this->submit_registration_form($request->all());
             return redirect()->route('thank-you');
         }
 
