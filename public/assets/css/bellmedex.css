@@ -1755,7 +1755,7 @@ header .container {
     background: #002147;
     text-decoration: none;
     display: inline-block;
-    transition: all 0.3s ease;
+    
     box-shadow: 0 4px 15px rgba(0, 33, 71, 0.2);
     position: relative;
     z-index: 1;
