@@ -9,8 +9,8 @@
     <meta name="ROBOTS" CONTENT="INDEX,FOLLOW">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
     
     <script>
         // Allow browser to restore scroll position on reload/back/forward

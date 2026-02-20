@@ -222,6 +222,10 @@
     }
 
     @media (max-width: 968px) {
+        .content-container-denial p {
+            text-align: left;
+        }
+        
         .denial-management-section {
             flex-direction: column;
             gap: 40px;
@@ -630,6 +634,22 @@
     @media (max-width: 968px) {
         .content-wrapper-denial {
             flex-direction: column;
+        }
+        
+        /* Fix justified text spacing on mobile */
+        .content-container-denial p,
+        .content-left-denial p,
+        .text-content-denial p,
+        .denial-management-section p,
+        .stats-text-denial p {
+            text-align: left !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        /* Ensure all paragraph text is left-aligned on mobile */
+        p {
+            text-align: left !important;
         }
     }
 

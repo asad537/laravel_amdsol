@@ -212,14 +212,14 @@
     }
 
     .pediatric-benefits-section {
-        padding: 60px 97px;
+        padding: 40px 97px;
         background-color: #ffffff;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
     .pediatric-header-wrapper {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
 
     .pediatric-main-heading-sec {
@@ -382,12 +382,12 @@
 
     .process-workflow-section {
         background: #002147;
-        padding: 40px 20px;
+        padding: 30px 20px;
     }
 
     .process-workflow-header {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
     .process-workflow-main-title {
@@ -483,7 +483,7 @@
     }
 
     .billing-solutions {
-        padding: 40px 20px;
+        padding: 30px 20px;
         text-align: center;
     }
 
@@ -550,7 +550,7 @@
     }
 
     .faq-section {
-        padding: 40px 20px;
+        padding: 30px 20px;
         background-color: #fbfbfb;
         text-align: center;
     }

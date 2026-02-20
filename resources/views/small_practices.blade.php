@@ -22,6 +22,8 @@
     /* Add proper spacing between sections */
     .small-practices-wrapper section {
         margin-bottom: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     .small-practices-wrapper section:last-child {
@@ -52,7 +54,7 @@
         align-items: center;
         overflow: hidden;
         padding: 40px 20px;
-        margin: 0 0 40px 0;
+        margin: 0 0 20px 0;
     }
 
     @media (max-width: 1024px) {
@@ -572,9 +574,13 @@
 
     /* Specialties Grid */
     .billing-solutions-small {
-        padding: 40px 20px;
+        padding: 20px 20px 40px 20px;
         background-color: #ffffff;
         text-align: center;
+        position: relative;
+        z-index: 1;
+        isolation: isolate;
+        margin-bottom: 10px;
     }
 
     .billing-solutions-small h2 {
@@ -676,23 +682,41 @@
 
     .see-more-btn-small {
         background-color: #002147;
-        color: white;
+        color: white !important;
         border: none;
         padding: 6px 35px;
         font-size: 14px;
         font-weight: 600;
-        border-radius: 8px;
+        border-radius: 15px;
         cursor: pointer;
         display: inline-block;
         transition: all 0.3s ease;
         text-decoration: none;
+        position: relative;
+        z-index: 10;
+        isolation: isolate;
     }
 
     .see-more-btn-small:hover {
-        background-color: #ffffff;
-        color: #002147;
-        border: 1px solid #002147;
+        /* background-color: #ffffff; */
+        color: #000000 !important;
+        border: 1px solid #000000;
         text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .see-more-btn-small:active,
+    /* .see-more-btn-small:focus, */
+    .see-more-btn-small:visited {
+        color: white !important;
+        text-decoration: none;
+        outline: none;
+    }
+
+    .see-more-btn-small:active {
+        background-color: #002147;
+        transform: translateY(1px);
     }
 
     /* CTA Section */
@@ -708,6 +732,8 @@
         min-height: 280px;
         margin: 0px auto;
         max-width: 1200px;
+        z-index: 2;
+        isolation: isolate;
     }
 
     .cta-container-small::before {

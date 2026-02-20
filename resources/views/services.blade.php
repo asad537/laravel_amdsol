@@ -136,6 +136,11 @@
 .about-section {
   padding: 0px 0;
   background: #fff;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  margin-bottom: 0;
+  padding-bottom: 40px;
 }
 
 .section-divider-mobile {
@@ -150,6 +155,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.about-container * {
+  max-width: 100%;
 }
 
 .about-image img {
@@ -180,6 +191,11 @@ border-radius:25px;
 
 .learn-more-wrapper {
   text-align: left;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  max-width: fit-content;
 }
 
 .learn-more-btn {
@@ -194,15 +210,36 @@ border-radius:25px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  
 }
 
 .learn-more-btn:hover {
   background: #ffffff;
   color: #000000;
-  transform: translateY(-2px);
+  
   border: 1px solid #000000;
   box-shadow: 0 8px 20px rgba(0, 33, 71, 0.3);
   text-decoration: none;
+}
+
+.about-content {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.about-content > h1,
+.about-content > p {
+  pointer-events: none;
+}
+
+.learn-more-wrapper,
+.learn-more-btn {
+  pointer-events: auto;
 }
 
 @media (max-width: 768px) {
@@ -257,6 +294,19 @@ border-radius:25px;
   padding: 40px 0;
   background: #fff;
   margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  pointer-events: auto;
+}
+
+.billing-process-section * {
+  pointer-events: auto;
+}
+
+.billing-process-container {
+  position: relative;
+  z-index: 1;
 }
 
 .billing-process-container {
@@ -323,7 +373,7 @@ border-radius:25px;
 
 .process-card:hover {
   transform: rotate(45deg) scale(1.08);
-  box-shadow: 0 15px 40px rgba(138, 27, 97, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 33, 71, 0.3);
   border-color: #002147
 }
 

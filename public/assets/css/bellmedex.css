@@ -853,17 +853,18 @@ header .container {
     display: inline-block;
     font-weight: 900;
     background-image: url('/images/banners/Flag-of-united-states-of-america.png');
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-decoration: none;
-    padding: 0 5px;
-    -webkit-text-stroke: 2px #3a3a3a;
-    text-stroke: 2px #3a3a3a;
-    filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.5));
+    padding: 0 8px;
+    -webkit-text-stroke: 1.5px #1a1a1a;
+    text-stroke: 1.5px #1a1a1a;
+    filter: contrast(1.3) brightness(1.1) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.4));
+    letter-spacing: 1px;
 }
 
 .hero-description {
@@ -1412,14 +1413,31 @@ header .container {
     border-radius: 60px;
     border: 2px solid var(--primary);
     background: var(--primary);
-    color: #ffffff;
+    color: #ffffff !important;
     font-weight: 600;
     font-size: 14px;
-    text-decoration: none;
-   
+    text-decoration: none !important;
     transition: all 0.3s ease;
     position: relative;
-    z-index: 1;
+    z-index: 10;
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    pointer-events: auto !important;
+    -webkit-touch-callout: none !important;
+}
+
+.specialties-cta-btn *,
+.specialties-cta-btn::before,
+.specialties-cta-btn::after {
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    -webkit-touch-callout: none !important;
 }
 
 
@@ -1428,9 +1446,11 @@ header .container {
 .specialties-cta-btn:active,
 .specialties-cta-btn:hover,
 .specialties-cta-btn:visited {
-    color: #ffffff;
-    text-decoration: none;
-    outline: none;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    user-select: none !important;
 }
 
 
@@ -4769,12 +4789,12 @@ header .container {
 
 .ehr-explore-btn:hover {
     background: var(--primary-hover);
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
     box-shadow: 0 10px 20px rgba(0, 33, 71, 0.2);
 }
 .specialties-cta-btn:hover {
     background: var(--primary-hover);
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
     box-shadow: 0 10px 20px rgba(0, 33, 71, 0.2);
 }
 @media (max-width: 991px) {

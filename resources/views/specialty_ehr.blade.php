@@ -561,7 +561,7 @@
                 </div>
 
                 <div class="feature-item">
-                     <div class="feature-icon"><img src="{{ asset('assets/images/specialty-ehr/Clip3.png') }}" alt="Audit"></div>
+                     <div class="feature-icon"><img src="{{ asset('assets/images/specialty-ehr/clip3.png') }}" alt="Audit"></div>
                     <div class="feature-content">
                         <p>Save $2,000 with our complimentary Billing Audit. Get insights based on 21 various KPIs to enhance cash flow.</p>
                     </div>

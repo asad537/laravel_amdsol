@@ -393,21 +393,34 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="{{ url('specialties') }}" class="specialties-cta-btn" id="viewMoreSpecialtiesBtn">
-                View More Specialties
+            <a href="{{ url('specialties') }}" class="specialties-cta-btn" id="viewMoreSpecialtiesBtn" draggable="false">
+                <span style="pointer-events: none; user-select: none;">View More Specialties</span>
             </a>
         </div>
     </div>
 </section>
 
 <script>
-    // Remove focus from View More Specialties button after click
+    // Remove focus from View More Specialties button after click and prevent text selection
     document.addEventListener('DOMContentLoaded', function() {
         const viewMoreBtn = document.getElementById('viewMoreSpecialtiesBtn');
         if (viewMoreBtn) {
-            viewMoreBtn.addEventListener('click', function() {
+            // Prevent text selection
+            viewMoreBtn.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+            });
+            
+            viewMoreBtn.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            viewMoreBtn.addEventListener('click', function(e) {
                 this.blur();
             });
+            
+            // Force pointer cursor
+            viewMoreBtn.style.cursor = 'pointer';
         }
     });
 </script>

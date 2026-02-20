@@ -1065,14 +1065,14 @@
                         solutions for hospitals and clinics. Here is an overview of what it typically offers:
                     </p>
                     <div class="hospital-services-grid">
-                        <div class="hospital-service-item"><span>Coding and Charge Entry</span></div>
-                        <div class="hospital-service-item"><span>Insurance Verification & Authorization</span></div>
-                        <div class="hospital-service-item"><span>Claim Submission & Follow Up</span></div>
-                        <div class="hospital-service-item"><span>Payment Posting & Account Follow up</span></div>
+                        <div class="hospital-service-item"><span>Coding & Charge Entry</span></div>
+                        <div class="hospital-service-item"><span>Insurance Verification</span></div>
+                        <div class="hospital-service-item"><span>Claim Submission</span></div>
+                        <div class="hospital-service-item"><span>Payment Posting</span></div>
                         <div class="hospital-service-item"><span>Denial Management</span></div>
-                        <div class="hospital-service-item"><span>Reporting and Analytics</span></div>
+                        <div class="hospital-service-item"><span>Reporting & Analytics</span></div>
                         <div class="hospital-service-item"><span>Patient Collections</span></div>
-                        <div class="hospital-service-item"><span>Technology and Systems</span></div>
+                        <div class="hospital-service-item"><span>Technology & Systems</span></div>
                     </div>
                 </div>
             </div>
