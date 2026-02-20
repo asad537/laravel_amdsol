@@ -44,6 +44,15 @@ Route::get('privacy-policy', function () {
     return view('privacy_policy');
 });
 
+// Thank You Page
+Route::get('thank-you', function () {
+    $data["meta_title"] = "Thank You | AMD SOL";
+    $data["meta_keywords"] = "Thank You, Contact, AMD SOL";
+    $data["meta_descr"] = "Thank you for contacting AMD SOL. We will get back to you soon.";
+    $data["site"] = App\Models\SiteSetting::find(1);
+    return view('thank_you', $data);
+});
+
 
 // Auth routes
 Route::get('signin', [App\Http\Controllers\Admin\AuthController::class, 'showLoginForm'])->name('login');

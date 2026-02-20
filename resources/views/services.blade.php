@@ -795,7 +795,7 @@ border-radius:25px;
     <!-- Right Side - Form -->
     <div class="hero-form">
       <h4>Book a Consultation</h4>
-      <form action="#" method="POST" id="servicesConsultForm">
+      <form action="{{ url('contact-us.php') }}" method="POST" id="servicesConsultForm">
         @csrf
         <div class="form-group">
           <label for="name">Full Name</label>

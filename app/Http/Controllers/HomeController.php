@@ -160,7 +160,7 @@ class HomeController extends Controller
     {
         if ($request->isMethod('post')) {
             $this->submit_registration_form($request->all());
-            return redirect()->back()->with('success', 'Your message is successfully sent. We will get back to you very soon!');
+            return redirect('thank-you');
         }
 
         $data['data'] = $page_data;
@@ -203,7 +203,7 @@ class HomeController extends Controller
         
         if ($request->isMethod('post')) {
             $this->submit_registration_form($request->all());
-            return redirect()->back()->with('success', 'Your message is successfully sent. We will get back to you very soon!');
+            return redirect('thank-you');
         }
 
         $data['data'] = $service;
@@ -375,7 +375,7 @@ class HomeController extends Controller
             // Implement contact form logic here
             // In CI it was: submit_contact_form($form);
             $this->submit_contact_form($request->all());
-            return redirect('contact-us.php')->with('green_msg', 'We Have Received Your Message Will Respond You Soon.');
+            return redirect('thank-you');
         }
 
         $data["meta_title"] = "Contact Us | AMD SOL";
@@ -390,7 +390,7 @@ class HomeController extends Controller
     {
         if ($request->isMethod('post')) {
             $this->submit_demo_form($request->all());
-            return redirect('request-demo')->with('green_msg', 'Thank you for your interest! We will contact you shortly to schedule your demo.');
+            return redirect('thank-you');
         }
 
         $data["meta_title"] = "Request a Demo | AMD SOL";
@@ -425,11 +425,15 @@ class HomeController extends Controller
 
         $messageText = "$name requested a Demo <br><br>Name  : $name<br>Email : $email<br>Phone : $phone<br>Practice : $practice<br>Physicians: $physicians<br>Message : $comments";
         
-        Mail::html($messageText, function ($message) use ($name, $email) {
-            $message->to('info@amdsol.com')
-                    ->subject("Demo Request From $name - AMD SOL")
-                    ->from($email, $name);
-        });
+        try {
+            Mail::html($messageText, function ($message) use ($name, $email) {
+                $message->to('info@amdsol.com')
+                        ->subject("Demo Request From $name - AMD SOL")
+                        ->replyTo($email, $name);
+            });
+        } catch (\Exception $e) {
+            \Log::error('Demo form email error: ' . $e->getMessage());
+        }
     }
 
     protected function submit_contact_form($form)
@@ -450,11 +454,15 @@ class HomeController extends Controller
 
         $messageText = "$name From Contact Us <br><br>Name  : $name<br>Phone : $phone<br>Subject : $subject<br>Email : $email<br>Message : $comments";
         
-        Mail::html($messageText, function ($message) use ($name, $email, $subject) {
-            $message->to('info@amdsol.com')
-                    ->subject("Contact Us From $name - AMD SOL")
-                    ->from($email, $name);
-        });
+        try {
+            Mail::html($messageText, function ($message) use ($name, $email, $subject) {
+                $message->to('info@amdsol.com')
+                        ->subject("Contact Us From $name - AMD SOL")
+                        ->replyTo($email, $name);
+            });
+        } catch (\Exception $e) {
+            \Log::error('Contact form email error: ' . $e->getMessage());
+        }
     }
 
     protected function submit_registration_form($form)
@@ -471,10 +479,14 @@ class HomeController extends Controller
                        "<h4>Company: <b>$company</b></h4><br>" .
                        "<p>Message: $comments</p>";
         
-        Mail::html($messageText, function ($message) use ($name, $email) {
-            $message->to('info@amdsol.com')
-                    ->subject("New Registration/Message from $name - AMD SOL")
-                    ->from($email, $name);
-        });
+        try {
+            Mail::html($messageText, function ($message) use ($name, $email) {
+                $message->to('info@amdsol.com')
+                        ->subject("New Registration/Message from $name - AMD SOL")
+                        ->replyTo($email, $name);
+            });
+        } catch (\Exception $e) {
+            \Log::error('Registration form email error: ' . $e->getMessage());
+        }
     }
 }
